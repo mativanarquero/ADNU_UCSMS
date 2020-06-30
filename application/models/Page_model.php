@@ -16,15 +16,15 @@
             return $query->result();
         }
 
-        public function fetchSubjectName($subject_code)
+        public function fetchSubjectName()
         {
-            $this->db->where('subject_name',$subject_code);
+        $this->db->where('subject_name',$subject_code);
             $query = $this->db->get('advisement');
             foreach($query->result() as $row)
             {
                 $output .= '<option value="'.$row->advisement_id.'">'.$row->subject_code.'</option>';
             }
-            return $output;
+            return $query->result();
         }
 
 
@@ -56,6 +56,24 @@
            
            return $query->result();
         }
+
+        public function fetch_room()
+        {
+           #$this->db->where('time_end_id');
+           $query = $this->db->get('room');
+           
+           return $query->result();
+        }
+
+        public function fetch_faculty()
+        {
+           #$this->db->where('time_end_id');
+           $query = $this->db->get('faculty');
+           
+           return $query->result();
+        }
+
+        
 
         #public function fetch_time_end($time_id)
         #{

@@ -1,4 +1,4 @@
-     
+
 
 <div class="page-container">
         <!-- sidebar menu area start -->
@@ -184,15 +184,16 @@
                              <div class="row">
                                 <div  class="col col-7">
                                 <h1>Course Code</h1>
-                                <select class="custom-select" id="subject" name="subject">
-                                        <option value ="" >Please Select..</option>
-                                        <option value="Computer Programming I">ICST101</option>
-                                        <option value="Technopreneurship">ICST107</option>
-                                        <option value="2">ICST201</option>
-                                        <option value="3">ICST202</option>
+                                  <select class="custom-select" name="advisement" id="advisement">
+                                        <option value="">Select Course</option>
+                                        <?php 
+                                        foreach($advisement as $row)
+                                        {
+                                        echo '<option value="'.$row->advisement_id.'">'.$row->subject_code.'</option>';
+                                        }
+                                        ?>  
+                
                                     </select>
-
-                                   
                                     
                                 </div>
 
@@ -201,6 +202,9 @@
                                         <input class="text-center" type="text" id="no_section" name="subject_name" value="3" readonly="readonly">
                                          </div>  
                                     </div>
+                                
+                                
+
                                 <h1>Course Title</h1>
                                 <input type="text" id="subject_name" name="subject_name" value="" readonly="readonly">
                                 <div style="text-align: center"> <h1>LECTURE</h1> </div>
@@ -251,24 +255,30 @@
                                 </div>  
                                  
                                 <h1>Room</h1>
-                                <select class="custom-select">
-                                        <option selected="selected">AL213</option>          
-                                        <option value="2">AL214</option>
-                                        <option value="1">AL215</option>
-                                        <option value="3">AL216</option>
+                                  <select class="custom-select" name="room" id="room">
+                                        <option value="">Select Room</option>
+                                        <?php 
+                                        foreach($room as $row)
+                                        {
+                                        echo '<option value="'.$row->room_id.'">'.$row->room_name.'</option>';
+                                        }
+                                        ?>  
+                
                                     </select> 
                                     
                             
                     
                                 <h1>Professsor</h1>
-                                <select class="custom-select">
-                                        <option selected="selected">Please Select...</option>
-                                        <option value="1" class="color-green">Arquero, Mat Ivan</option>
-                                        <option value="1" class="color-green">Garay, Raphael Henry M.</option>
-                                        <option value="2" class="color-red">Santos, John Sixto G. </option>
-                                        <option value="3" class="color-red">Aureus, Jelly P.</option>
+                                <select class="custom-select" name="faculty" id="faculty">
+                                        <option value="">Select Professor</option>
+                                        <?php 
+                                        foreach($faculty as $row)
+                                        {
+                                        echo '<option value="'.$row->faculty_id.'">'.$row->faculty_name.'</option>';
+                                        }
+                                        ?>  
+                
                                     </select>
-
                                     
 
                                 <h1>Legend</h1>

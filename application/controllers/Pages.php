@@ -41,6 +41,9 @@ class Pages extends CI_Controller {
 			$data['day'] = $this->page_model->fetch_day();
 			$data['time_start'] = $this->page_model->fetch_time_start();
 			$data['time_end'] = $this->page_model->fetch_time_end();
+			$data['advisement'] = $this->page_model->fetchSubject();
+			$data['room'] = $this->page_model->fetch_room();
+			$data['faculty'] = $this->page_model->fetch_faculty();
 			$this->load->view('template/header_1');
 			$this->load->view('pages/chairperson/add_schedule', $data);
 		
@@ -59,6 +62,14 @@ class Pages extends CI_Controller {
 		if($this->input->post('time_id'))
 		{
 		 echo $this->page_model->fetch_time_end($this->input->post('time_id'));
+	 }
+	}
+
+	public function fetch_faculty()
+	 {
+		if($this->input->post('faculty_id'))
+		{
+		 echo $this->page_model->fetch_faculty($this->input->post('faculty_id'));
 	 }
 	}
 	 
