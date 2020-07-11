@@ -393,11 +393,12 @@
 
     <script type="text/javascript">
   $(document).ready(function(){
- 
+    var advisements = <?php json_encode($advisement); ?>;
     $("advisement").change(function() { 
         
         alert($("advisement").val());
     });
+});
 
   </script>
 
