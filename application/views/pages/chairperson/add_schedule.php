@@ -494,3 +494,19 @@ $(document).ready(function() {
     });
 });
 </script>
+
+
+//<script>
+
+//$(document).ready(function() {
+
+    //$("#subject option").filter(function() {
+      //  return $(this).val() == $("#subject_name").val();
+    //}).attr('selected', true);
+
+    //$("#subject").on("change", function() {
+
+      //  $("#subject_name").val($(this).find("option:selected").attr("value"));
+    //});
+//});
+</script>
