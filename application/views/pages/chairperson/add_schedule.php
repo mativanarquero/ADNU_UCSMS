@@ -189,7 +189,7 @@
                                         <?php 
                                         foreach($advisement as $row)
                                         {
-                                        echo '<option value="'.$row->advisement_id.'">'.$row->subject_code.'</option>';
+                                        echo '<option value="'.$row->id.'">'.$row->subject_code.'</option>';
                                         }
                                         ?>  
                 
@@ -393,50 +393,12 @@
 
     <script type="text/javascript">
   $(document).ready(function(){
-    $('#day').change(function(){
-    var day_id = $('#day').val();
-    if(day_id != '')
-     {
-    $.ajax({
-    url:"<?php echo base_url(); ?>pages/fetch_day",
-    method:"POST",
-    data:{day_id:day_id},
-    success:function(data)
-    {
-     $('#time_Start').html(data);
-     $('#time_end').html('<option value="">Select Day</option>');
-    }
-   });
-  }
-            else
-            {
-                $('#time_start').html('<option value=""> Select Time Start </option>');
-                $('#time_end').html('<option value=""> Select Time End </option');
-            }
-        });
-
-        ('#time_start').change(function(){
-            var time_id = $('#time_start').val();
-            if(time_id != '')
-            {
-                $.ajax({
-                    url: "<?php echo base_url();?> pages/fetch_time_start",
-                    method: "POST",
-                    data: {time_id:time_id}
-                    success: function(data)
-                    {
-                        $('#time_end').html(data);
-                    }
-
-                });
-            }
-            else
-            {
-                $('#time_end').html('<option value=""> Select Time End</option>');
-            }
-
+ 
+    $("advisement").change(function() { 
+        
+        alert($("advisement").val());
     });
-  });
+
   </script>
 
 
@@ -489,6 +451,21 @@ $(document).ready(function() {
     }).attr('selected', true);
 
     $("#subject").on("change", function() {
+
+        $("#subject_name").val($(this).find("option:selected").attr("value"));
+    });
+});
+</script>
+
+<script>
+
+$(document).ready(function() {
+
+    $("#advisement").filter(function() {
+        return $(this).val() == $("#subject_name").val();
+    }).attr('selected', true);
+
+    $("#advisement").on("change", function() {
 
         $("#subject_name").val($(this).find("option:selected").attr("value"));
     });
