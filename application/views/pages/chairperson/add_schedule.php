@@ -199,7 +199,7 @@
 
                                 <div class="col col-5">
                                         <h1>No. of Section</h1>
-                                        <input class="text-center" type="text" id="no_section" name="subject_name" value="3" readonly="readonly">
+                                        <input class="text-center" type="text" id="no_section" name="no_section" value="2" readonly="readonly">
                                          </div>  
                                     </div>
                                 
@@ -290,6 +290,7 @@
                                   <li class="green"></li>
                                   <li class="orange"></li>
                                   <li class="gray"></li>
+                                  <button type="button" type="submit" id="btn_create" class="btn btn-primary">Create Schedule Temp</button>
                                   
                                 </ul>
                                 <form>
@@ -305,7 +306,7 @@
                                               </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center" >
-                                            <p>ICST101</p>
+                                            <p>Programming 1</p> 
                                             <p><b>Lec</b></p> 
                                             <p>Monday - Wednesday</p>
                                             <p>7:30 AM - 8:30 AM</p> 
@@ -388,7 +389,39 @@
     <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
 
 
+<script>
 
+$('#btn_create').on('click',function(){
+            var faculty_id = $('#faculty_id').val();
+            var day = $('#day').val();
+            var subject_id = $('#subject_id').val();
+            var schedule_id = $('#schedule_id').val();
+            var room_id = $('#room_id').val();
+            var time_start = $('#time_start').val();
+            var time_end = $('#time_end').val();
+            $.ajax({
+                type     : "POST",
+                url      : "<?php echo site_url('pages/insert_subject_offering')?>",
+                dataType : "JSON",
+                data     : {faculty_id:faculty_id, day:day, subject_id:subject_id, schedule_id:schedule_id, room_id:room_id, time_start:time_start, time_end:time_end},
+                success  : function(data){
+                    $('[name="faculty_id"]').val("");
+                    $('[name="day"]').val("");
+                    $('[name="subject_id"]').val("");
+                    $('[name="schedule_id"]').val("");
+                    $('[name="room_id"]').val("");
+                    $('[name="time_start"]').val("");
+                    $('[name="time_end"]').val("");
+                    $('#Modal_Add').modal('hide');
+                    //show_faculty(); 
+                } 
+                
+            });
+            
+            return false;
+    });
+
+</script>
 
 
     <script type="text/javascript">
@@ -447,7 +480,7 @@
 
 $(document).ready(function() {
 
-    $("#subject option").filter(function() {
+    $("#subject").filter(function() {
         return $(this).val() == $("#subject_name").val();
     }).attr('selected', true);
 
@@ -473,8 +506,22 @@ $(document).ready(function() {
 });
 </script>
 
+<script>
+$(document).ready(function() {
 
-//<script>
+$("#advisement").filter(function() {
+    return $(this).val() == $("#suggested_section").val();
+}).attr('selected', true);
+
+$("#advisement").on("change", function() {
+
+    $("#suggested_section").val($(this).find("option:selected").attr("value"));
+});
+});
+</script>
+
+
+<script>
 
 //$(document).ready(function() {
 

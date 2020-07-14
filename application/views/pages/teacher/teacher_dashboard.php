@@ -30,6 +30,7 @@
                                     <ul class="collapse">
                                             <li><a href="<?php echo base_url('view_preferred')?>">View Schedule</a></li>
                                     </ul>
+                                    <li><a href="<?php echo base_url('chairperson_setting')?>">My Profile</a></li>
                                 </li>
 
                             </ul>

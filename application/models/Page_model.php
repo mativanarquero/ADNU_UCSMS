@@ -120,6 +120,22 @@
             return $result;
         }
 
+        public function insert_subject_offeringdata()
+        {
+            $data = array(
+                'faculty_id' => $faculty_id,
+                'day' => $day,
+                'subject_id' => $subject_id,
+                'schedule_id' => $schedule_id,
+                'room_id' => $room_id,
+                'time_start' => $time_start,
+                'time_end' => $time_end,
+            );
+
+            $result = $this->db->insert('subject_offering',$data);
+            return $result;
+        }
+
         public function insert_semesterdata()
         {
             $status = "2";

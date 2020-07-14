@@ -408,7 +408,7 @@
                                '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-subject_code="'+data[i].subject_code+'">Delete</a>'+
                                '</td>' +
                                '</tr>';
-                    }
+                    } 
                     $('#show_data').html(html); 
             }
         });

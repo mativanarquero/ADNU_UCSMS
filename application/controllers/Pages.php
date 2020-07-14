@@ -198,6 +198,14 @@ class Pages extends CI_Controller {
 		$data = $this->page_model->insert_subjectdata();
 		echo json_encode($data);
 	}
+	
+
+	public function insert_subject_offering()
+	{
+		$data = $this->page_model->insert_subject_offeringdata();
+		echo json_encode($data);
+	}
+
 
 	public function insert_semester()
 	{
