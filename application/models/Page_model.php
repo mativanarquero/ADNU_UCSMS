@@ -129,7 +129,8 @@ class Page_model extends CI_Model
             'Day' => $this->input->post('day'),
             'subject_id' => $this->input->post('subject_id'),
             'room_id' => $this->input->post('room_id'),
-            'time_id' => $this->input->post('time_start'),
+            'time_start' => $this->input->post('time_start'),
+            'time_end' => $this->input->post('time_start'),
         );
 
         $result = $this->db->insert('subject_offering', $data);
@@ -175,7 +176,6 @@ class Page_model extends CI_Model
 
     public function delete_facultydata()
     {
-
         $faculty_name = $this->input->post('faculty_name');
         $this->db->where('faculty_name', $faculty_name);
         $result = $this->db->delete('faculty');
@@ -192,7 +192,6 @@ class Page_model extends CI_Model
 
     function update_facultydata()
     {
-
         $faculty_type_a = $this->session->userdata('faculty_type');
         $faculty_type_b = "Teacher";
         $faculty_name_a = $this->session->userdata('faculty_name');
@@ -215,7 +214,6 @@ class Page_model extends CI_Model
 
     function update_subjectdata()
     {
-
         $subject_code = $this->input->post('subject_code');
         $subject_year = $this->input->post('subject_year');
         $subject_name = $this->input->post('subject_name');
