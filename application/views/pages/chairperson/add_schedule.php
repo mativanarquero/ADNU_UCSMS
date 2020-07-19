@@ -395,7 +395,7 @@ $('#btn_create').on('click',function(){
             var faculty_id = $('#faculty').val();
             var day = $('#day').val();
             var subject_id = $('#advisement').val();
-            var schedule_id = $('#schedule_id').val();
+            //var schedule_id = $('#schedule_id').val();
             var room_id = $('#room').val();
             var time_start = $('#time_start').val();
             var time_end = $('#time_end').val();
@@ -403,7 +403,7 @@ $('#btn_create').on('click',function(){
                 type     : "POST",
                 url      : "<?php echo site_url('pages/insert_subject_offering')?>",
                 dataType : "JSON",
-                data     : {faculty_id:faculty_id, day:day, subject_id:subject_id, schedule_id:schedule_id, room_id:room_id, time_start:time_start, time_end:time_end},
+                data     : {faculty_id:faculty_id, day:day, subject_id:subject_id, room_id:room_id, time_start:time_start, time_end:time_end},
                 success  : function(data){
                     $('[name="faculty_id"]').val("");
                     $('[name="day"]').val("");
