@@ -213,7 +213,7 @@
                                 <option value="">Select Day Scheme</option>
                                 <?php
                                 foreach ($day as $row) {
-                                    echo '<option value="' . $row->Day_ID . '">' . $row->day_name . '</option>';
+                                    echo '<option value="' . $row->day_name . '">' . $row->day_name . '</option>';
                                 }
                                 ?>
 
