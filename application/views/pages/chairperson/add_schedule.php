@@ -392,11 +392,11 @@
 <script>
 
 $('#btn_create').on('click',function(){
-            var faculty_id = $('#faculty_id').val();
+            var faculty_id = $('#faculty').val();
             var day = $('#day').val();
-            var subject_id = $('#subject_id').val();
+            var subject_id = $('#advisement').val();
             var schedule_id = $('#schedule_id').val();
-            var room_id = $('#room_id').val();
+            var room_id = $('#room').val();
             var time_start = $('#time_start').val();
             var time_end = $('#time_end').val();
             $.ajax({
@@ -521,17 +521,3 @@ $("#advisement").on("change", function() {
 </script>
 
 
-<script>
-
-//$(document).ready(function() {
-
-    //$("#subject option").filter(function() {
-      //  return $(this).val() == $("#subject_name").val();
-    //}).attr('selected', true);
-
-    //$("#subject").on("change", function() {
-
-      //  $("#subject_name").val($(this).find("option:selected").attr("value"));
-    //});
-//});
-</script>
