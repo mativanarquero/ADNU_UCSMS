@@ -353,4 +353,13 @@ class Page_model extends CI_Model
             ->get();
         return $query->result();
     }
+
+    public function subject_offering_list()
+    {
+        $query = $this->db->select('*')
+            ->from('subject_offering')
+            ->order_by('offering_id', 'ASC')
+            ->get();
+        return $query->result();
+    }
 }

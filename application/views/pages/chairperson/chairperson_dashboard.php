@@ -47,6 +47,13 @@
                                 </li>
 
                                 <li>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
+                            <ul class="collapse">
+                                <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
+                            </ul>
+                        </li>
+
+                                <li>
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Subject Request</span></a>
                                     <ul class="collapse">
                                         <li><a href="<?php echo base_url('my_request')?>">My Request</a></li>

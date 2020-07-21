@@ -284,11 +284,11 @@
                                 <li class="green"></li>
                                 <li class="orange"></li>
                                 <li class="gray"></li>
-                                <button type="button" type="submit" id="btn_create" class="btn btn-primary">Create Schedule Temp</button>
+                                
 
                             </ul>
                             <form>
-                                <input type="button" data-toggle="modal" value="Create Schedule" data-target="#exampleModalCenter"> </input>
+                                <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule" data-target="#exampleModalCenter"> </input>
 
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
