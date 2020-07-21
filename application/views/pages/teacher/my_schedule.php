@@ -1,12 +1,9 @@
-
-    <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
+<div class="page-container">
         <!-- sidebar menu area start -->
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.html"><img src="<?php echo base_url()?>/assets/images/icon/logo.png" alt="logo"></a>
+                <a href="index.html"><img src="<?php echo base_url(); ?>assets/images/icon/logo.png" alt="logo"></a>
                     <br><br>
                     <h5 class="text-style"><?php echo $this->session->userdata('faculty_name');?></h5>
                     <h6 class="text-style"><?php echo $this->session->userdata('faculty_type');?></h6>
@@ -17,70 +14,25 @@
             <div class="main-menu">
                     <div class="menu-inner">
                         <nav>
-                        <ul class="metismenu" id="menu">
+                            <ul class="metismenu" id="menu">
+                            <li >
+                                    <a href="<?php echo base_url('teacher_dashboard');?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                </li>          
                                 <li>
-                                        <a href="<?php echo base_url('chairperson_dashboard')?>"><i class="ti-dashboard"></i><span>Dashboard</span></a>
-            
-                                </li>
-                  
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-timer"></i><span>Manage Schedule</span></a>
+                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Preferred Schedule</span></a>
                                     <ul class="collapse">
-                                        <li><a href="<?php echo base_url('pages/addSchedule')?>">Add Schedule</a></li>
-                                        <li><a href="<?php echo base_url('view_preferred_schedule')?>">View Preferred Schedule</a></li>
-                                        <li><a href="<?php echo base_url('view_preferred_schedule')?>">View My Schedule</a></li>
-                                
+                                        <li><a href="<?php echo base_url('teacher_preferred')?>">Add Preferred Schedule</a></li>
+                                        <li><a href="<?php echo base_url('view_preferred')?>">View Preferred Schedule</a></li>
                                     </ul>
                                 </li>
-                    
-                                <li>
-                                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-users"></i><span>Manage Faculty</span></a>
-                                        <ul class="collapse">
-                                        <li><a href="<?php echo base_url('view_faculty')?>">View Faculty</a></li>                    
-                                                <li><a href="<?php echo base_url('view_subject')?>">View Subject</a></li>                 
-    
-                                        </ul>
-                                    </li>
-
-                                    <li class="active">
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
-                            <ul class="collapse">
-                                <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
-                            </ul>
-                        </li>
-
-                                    <li>
-                                        <a href="<?php echo base_url('view_subject')?>"><i class="ti-dashboard"></i><span>Manage Subject</span></a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Subject Request</span></a>
+                                <li class="active">
+                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                                     <ul class="collapse">
-                                        <li><a href="<?php echo base_url('my_request')?>">My Request</a></li>
-                                        <li><a href="<?php echo base_url('chair_request')?>">Other Request</a></li>
+                                            <li><a href="<?php echo base_url('my_schedule')?>">View Schedule</a></li>
                                     </ul>
+                                    <li><a href="<?php echo base_url('chairperson_setting')?>">My Profile</a></li>
                                 </li>
-                                <li>
-                                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
-                                            <span>Overload</span></a>
-                                        <ul class="collapse">
-                                            <li><a href="table-basic.html">Overload subject</a></li>
 
-                                        </ul>
-                                        </li>
-                                <li>
-                                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
-                                            <span>Reports</span></a>
-                                        <ul class="collapse">
-                                            <li><a href="table-basic.html">basic table</a></li>
-                                            <li><a href="table-layout.html">table layout</a></li>
-                                            <li><a href="datatable.html">datatable</a></li>
-                                        </ul>
-                                        </li>
-                                        <li>
-                                        <a href="<?php echo base_url('chairperson_setting')?>"><i class="ti-dashboard"></i><span>MyProfile</span></a>
-
-                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -165,8 +117,6 @@
                             <li>
                                             <h5 data-toggle="dropdown">  <i class="ti-settings"></i></h5>
                                             <div class="dropdown-menu">
-        
-                                                <a class="dropdown-item" href="<?php echo site_url('chairperson_setting')?>">Settings</a>
                                                 <a class="dropdown-item" href="<?php echo site_url('logout');?>">Log Out</a>
                                             
                                         </div>
@@ -182,42 +132,30 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">My Schedule</h4>
+                            <h4 class="page-title pull-left">Dashboard</h4>
                             <ul class="breadcrumbs pull-left">
                                 <li><a href="index.html">Home</a></li>
-                                <li><span>Schedule</span></li>
+                                <li><span>Dashboard</span></li>
                             </ul>
                         </div>
                 </div>
             </div>
 
-           
             <div class="main-content-inner">
                     <div class="card">
                             <div class="card-body">
-                                    <div class="row">
-                                            <div class="col-md-6">
-                                        <p class="text-primary"><?php echo $this->session->userdata('department_name');?></p>
-                                        </div>
-
-                                        <?php if ($this->session->flashdata('import')) { ?>
-                                       <div class="alert alert-success"> <?= $this->session->flashdata('import') ?> </div>
-                                        <?php } ?>
-
-                                </div>
-                                
                                 <div class="row">
+                                <p class="text-primary">Subject Offering for 2nd Semester 2020-2021</p>
+                        </div>
+                        <div class="row">
                                 <div class="col-12">
                                 <div class="col-md-12">
                                     <table class="table table-striped" id="mydata">
                                         <thead>
                                             <tr style="text-align:center">
                      
-                                                <th>OFFERING ID</th>
-                                                <th>FACULTY ID</th>
-                                                <th>DAY</th>
-                                                <th>SUBJECT ID</th>
-                                               
+                                                <th>SUBJECT CODE</th>
+                                                <th>SUBJECT NAME</th>
                                             </tr>
                                         </thead>
                                         <tbody id="show_data" style="text-align:center">
@@ -228,10 +166,9 @@
                             </div>
                         </div>
                         </div>
+                            </div>
                         </div>
-    
                 </div>
-
 
                 <script src="<?php echo base_url(); ?>assets/js/vendor/jquery-2.2.4.min.js"></script>
     <!-- bootstrap 4 js -->

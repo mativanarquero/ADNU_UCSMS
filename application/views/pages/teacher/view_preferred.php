@@ -28,7 +28,7 @@
                                 <li>
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                                     <ul class="collapse">
-                                            <li><a href="<?php echo base_url('view_preferred')?>">View Schedule</a></li>
+                                            <li><a href="<?php echo base_url('my_schedule')?>">View Schedule</a></li>
                                     </ul>
                                 </li>
 
