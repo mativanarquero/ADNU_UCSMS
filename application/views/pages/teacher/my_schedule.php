@@ -218,7 +218,7 @@ $(document).ready(function(){
                                '<td>'+data[i].time_start_name+'</td>'+
                                '<td>'+data[i].time_end_name+'</td>'+
                                '<td>'+data[i].room_name+'</td>'+
-                               '<td>'+data[i].day_name+'</td>'+
+                               '<td>'+data[i].Day+'</td>'+
                                '<td>'+data[i].faculty_name+'</td'+
                                '</tr>';
    
