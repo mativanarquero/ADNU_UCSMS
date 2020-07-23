@@ -213,10 +213,13 @@
                                         <thead>
                                             <tr style="text-align:center">
                      
-                                                <th>OFFERING ID</th>
-                                                <th>FACULTY ID</th>
+                                                <th>SUBJECT CODE</th>
+                                                <th>SUBJECT NAME</th>
+                                                <th>START TIME</th>
+                                                <th>END TIME</th>
+                                                <th>ROOM</th>
                                                 <th>DAY</th>
-                                                <th>SUBJECT ID</th>
+                                                <th>TEACHER</th>
                                                
                                             </tr>
                                         </thead>
@@ -271,10 +274,13 @@ $(document).ready(function(){
                       
                         html += '<tr>' + 
 
-                               '<td>'+data[i].offering_id+'</td>'+
-                               '<td>'+data[i].faculty_id+'</td>'+
+                               '<td>'+data[i].subject_code+'</td>'+
+                               '<td>'+data[i].subject_name+'</td>'+
+                               '<td>'+data[i].time_start_name+'</td>'+
+                               '<td>'+data[i].time_end_name+'</td>'+
+                               '<td>'+data[i].room_name+'</td>'+
                                '<td>'+data[i].Day+'</td>'+
-                               '<Td>'+data[i].subject_id+'</td'+
+                               '<td>'+data[i].faculty_name+'</td'+
                                '</tr>';
    
                     }
@@ -306,8 +312,6 @@ $(document).ready(function(){
 	});
       
         }
-
-
 
 
 

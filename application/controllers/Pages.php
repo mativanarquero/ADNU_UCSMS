@@ -65,6 +65,13 @@ class Pages extends CI_Controller
 		}
 	}
 
+	public function fetch_day()
+	{
+		if ($this->input->post('day_id')) {
+			echo $this->page_model->fetch_day($this->input->post('day_id'));
+		}
+	}
+
 	public function fetch_faculty()
 	{
 		if ($this->input->post('faculty_id')) {

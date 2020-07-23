@@ -241,6 +241,7 @@
                                 <select class="custom-select" name="time_end" id="time_end">
                                     <option value="">Select Time End</option>
                                     <?php
+                                
                                     foreach ($time_end as $row) {
                                         echo '<option value="' . $row->time_end_id . '">' . $row->time_end_name . '</option>';
                                     }

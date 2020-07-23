@@ -145,7 +145,7 @@
                     <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                <p class="text-primary">Subject Offering for 2nd Semester 2020-2021</p>
+                                <p class="text-primary">Schedule for 2nd Semester 2020-2021</p>
                         </div>
                         <div class="row">
                                 <div class="col-12">
@@ -153,9 +153,14 @@
                                     <table class="table table-striped" id="mydata">
                                         <thead>
                                             <tr style="text-align:center">
-                     
+                                                
                                                 <th>SUBJECT CODE</th>
                                                 <th>SUBJECT NAME</th>
+                                                <th>START TIME</th>
+                                                <th>END TIME</th>
+                                                <th>ROOM</th>
+                                                <th>DAY</th>
+                                                <th>TEACHER</th>
                                             </tr>
                                         </thead>
                                         <tbody id="show_data" style="text-align:center">
@@ -208,10 +213,13 @@ $(document).ready(function(){
                       
                         html += '<tr>' + 
 
-                               '<td>'+data[i].offering_id+'</td>'+
-                               '<td>'+data[i].faculty_id+'</td>'+
-                               '<td>'+data[i].Day+'</td>'+
-                               '<Td>'+data[i].subject_id+'</td'+
+                        '<td>'+data[i].subject_code+'</td>'+
+                               '<td>'+data[i].subject_name+'</td>'+
+                               '<td>'+data[i].time_start_name+'</td>'+
+                               '<td>'+data[i].time_end_name+'</td>'+
+                               '<td>'+data[i].room_name+'</td>'+
+                               '<td>'+data[i].day_name+'</td>'+
+                               '<td>'+data[i].faculty_name+'</td'+
                                '</tr>';
    
                     }
