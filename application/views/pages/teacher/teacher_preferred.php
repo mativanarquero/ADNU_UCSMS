@@ -71,7 +71,7 @@
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
                                             <div class="notify-text">
-                                                <p>New Commetns On Post</p>
+                                                <p>New Comments On Post</p>
                                                 <span>30 Seconds ago</span>
                                             </div>
                                         </a>
@@ -162,9 +162,9 @@
                                 <h1>Semester</h1>
                                          <select class="custom-select"  id="semester" name="semester" onchange="populate(this.id,'units')">
                                          <option></option>
-                                         <option>First Sem </option>
-                                         <option>Second Sem </option>
-                                         <option>Summer </option>
+                                         <option>First Semester </option>
+                                         <option>Second Semester </option>
+                                         <option>Intercession </option>
                                     
                                     </select>
                                     </div>
@@ -182,6 +182,10 @@
                                       
                                               </div>
                                               <br>
+
+                        
+
+                                              
                                     <h1>Course Code</h1>
                                     <select class="custom-select" id="subject_code" name="subject">
                                             <option selected="selected" value="">Please Select...</option>
@@ -283,9 +287,9 @@
     <script>
   jQuery(function($) {
     var units = {
-        'First Sem': ['18 units', '19 units', '20 units','21 units','22 units','23 units', '24 units', '25 units', '26 units'],
-        'Second Sem': ['18 units', '19 units', '20 units','21 units','22 units','23 units', '24 units', '25 units', '26 units'],
-        'Summer': ['3 units', '6 units', '9 units'],
+        'First Semester': ['18 units', '19 units', '20 units','21 units','22 units','23 units', '24 units', '25 units', '26 units'],
+        'Second Semester': ['18 units', '19 units', '20 units','21 units','22 units','23 units', '24 units', '25 units', '26 units'],
+        'Intercession': ['3 units', '6 units', '9 units'],
     }
     
     var $units = $('#units');
@@ -300,6 +304,7 @@
 });
 
         </script>
+        
 
     <script>
 $(document).ready(function(){
@@ -341,11 +346,12 @@ $(document).ready(function(){
  $('#add_subject').click(function()
     {
        var subject_code = $('#subject_code').val();
+       var subject_name = $('#subject_name').val();
     
        $('#mydata2 tbody:last-child').append(
            '<tr>'+
-           '<td>'+ semester + '</td>' +
-           '<td>'+  + '</td>'+
+           '<td>'+ subject_code + '</td>' +
+           '<td>'+ subject_name + '</td>'+
            '</tr>'
        ); 
     });
@@ -383,11 +389,10 @@ $(document).ready(function(){
 
 
 
-
-
-
 });
 </script>
+
+
     
 
     </body>

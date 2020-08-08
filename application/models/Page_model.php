@@ -122,6 +122,18 @@ class Page_model extends CI_Model
         return $result;
     }
 
+    public function add_subjectdata()
+    {
+        $preferred_subject_id = $this->session->userdata('preferred_subject_id');
+        $data = array(
+            'faculty_id' => $this->input->post('faculty_id'),
+            'subject_id' => $this->input->post('subject_id'),
+        );
+
+        $result = $this->db->insert('preferred_subject', $data);
+        return $result;
+    }
+
     public function insert_subject_offeringdata()
     {
         $data = array(
