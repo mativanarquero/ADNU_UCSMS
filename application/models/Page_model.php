@@ -127,7 +127,7 @@ class Page_model extends CI_Model
     {
         $faculty_id = $this->session->userdata('faculty_id');
         $data = array(
-            'faculty_id' => $this->input->post('faculty_id'),
+            'faculty_id' => $this->session->userdata('faculty_id'),
             'subject_id' => $this->input->post('subject_id'),
         );
 
