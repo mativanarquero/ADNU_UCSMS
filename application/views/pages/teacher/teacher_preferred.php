@@ -85,7 +85,7 @@
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
                                             <div class="notify-text">
-                                                <p>New Commetns On Post</p>
+                                                <p>New Comments On Post</p>
                                                 <span>30 Seconds ago</span>
                                             </div>
                                         </a>
@@ -183,7 +183,7 @@
                                               </div>
                                               <br>
 
-                        
+                    
 
                                               
                                     <h1>Course Code</h1>
@@ -346,7 +346,17 @@ $(document).ready(function(){
  $('#add_subject').click(function()
     {
        var subject_code = $('#subject_code').val();
-       var subject_name = $('#subject_name').val();
+       //var subject_name = $('#subject_name').val();
+
+       $.ajax({
+    url:"<?php echo base_url(); ?>pages/fetchSubject",
+    method:"POST",
+    data:{subject_code:subject_code},
+    success:function(data)
+    {
+     $('#subject_code').html(data);
+    }
+   });
     
        $('#mydata2 tbody:last-child').append(
            '<tr>'+

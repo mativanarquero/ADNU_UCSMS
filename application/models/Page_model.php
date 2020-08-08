@@ -17,6 +17,7 @@ class Page_model extends CI_Model
         $query = $this->db->get('advisement');
         return $query->result();
     }
+    
 
     public function fetchSubjectName($subject_code)
     {
@@ -124,7 +125,7 @@ class Page_model extends CI_Model
 
     public function add_subjectdata()
     {
-        $preferred_subject_id = $this->session->userdata('preferred_subject_id');
+        $faculty_id = $this->session->userdata('faculty_id');
         $data = array(
             'faculty_id' => $this->input->post('faculty_id'),
             'subject_id' => $this->input->post('subject_id'),
