@@ -16,6 +16,13 @@ class Pages extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function load_all_schedules()
+	{
+
+		$data = $this->page_model->all_subject_offering_list();
+		echo json_encode($data);
+	}
+
 	public function fetchSubjectName()
 	{
 		if ($this->input->post('subject_code')) {

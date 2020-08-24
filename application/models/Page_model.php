@@ -381,6 +381,25 @@ class Page_model extends CI_Model
             ->from('subject_offering')
             ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
             ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
+            ->where('faculty.faculty_id', $this->session->userdata('faculty_id'))
+            ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
+            ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
+            ->join('room', 'room.room_id=subject_offering.room_id', 'left')
+            
+            //->join('advisement', 'advisement.advisement_id=subject_offering.subject_id', 'left')
+            ->order_by('offering_id', 'ASC')
+            ->get();
+        return $query->result();
+
+    }
+
+    public function all_subject_offering_list()
+    {
+        $query = $this->db->select('*')
+            ->from('subject_offering')
+            ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
+            ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
+            //->where('faculty.faculty_id', $this->session->userdata('faculty_id'))
             ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
             ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
             ->join('room', 'room.room_id=subject_offering.room_id', 'left')
