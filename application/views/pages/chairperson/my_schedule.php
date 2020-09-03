@@ -43,9 +43,10 @@
                                     </li>
 
                                     <li class="active">
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Schedules</span></a>
                             <ul class="collapse">
-                                <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
+                            <li><a href="<?php echo base_url('my_schedule.php') ?>"> My Schedule</a></li>
+                                <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
 
@@ -220,6 +221,7 @@
                                                 <th>ROOM</th>
                                                 <th>DAY</th>
                                                 <th>TEACHER</th>
+                                                <th>ACTION</th>
                                                
                                             </tr>
                                         </thead>
@@ -234,6 +236,35 @@
                         </div>
     
                 </div>
+
+
+
+
+<!-- START MODAL DELETE-->
+<form>
+            <div class="modal fade" id="Modal_Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Subject Offering</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                       <strong>Are you sure to delete this Subject Offering Record?</strong>
+                  </div>
+                  <div class="modal-footer">
+                    <input type="hidden" name="offering_id_delete" id="offering_id_delete" class="form-control">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" type="submit" id="btn_delete" class="btn btn-primary">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </form>
+<!-- END MODAL DELETE-->
+
 
 
                 <script src="<?php echo base_url(); ?>assets/js/vendor/jquery-2.2.4.min.js"></script>
@@ -257,6 +288,8 @@
     <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
 
     <script>
+
+    
 $(document).ready(function(){
    load_my_schedule();
         $('#mydata').dataTable();
@@ -280,7 +313,10 @@ $(document).ready(function(){
                                '<td>'+data[i].time_end_name+'</td>'+
                                '<td>'+data[i].room_name+'</td>'+
                                '<td>'+data[i].Day+'</td>'+
-                               '<td>'+data[i].faculty_name+'</td'+
+                               '<td>'+data[i].faculty_name+'</td>'+
+                               '<td style="text-align:center;">'+
+                               '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-offering_id="'+data[i].offering_id+'">Delete</a>'+
+                               '</td>' +
                                '</tr>';
    
                     }
@@ -288,6 +324,35 @@ $(document).ready(function(){
             }
         });
 
+        $('#show_data').on('click','.item_delete',function(){
+            var offering_id = $(this).data('offering_id');
+            
+            $('#Modal_Delete').modal('show');
+            $('[name="offering_id_delete"]').val(offering_id);
+        });
+
+        $('#btn_delete').on('click',function(){
+            var offering_id = $('#offering_id_delete').val();
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo site_url('pages/delete_subject_offering')?>",
+                dataType : "JSON",
+                data : {offering_id:offering_id},
+                success: function(data){
+                    $('[name="offering_id_delete"]').val("");
+                    $('#Modal_Delete').modal('hide');
+                    load_my_schedule();
+                }
+            });
+            return false;
+        });
+
+        $('#show_data').on('click','.item_delete',function(){
+            var offering_id = $(this).data('offering_id');
+            
+            $('#Modal_Delete').modal('show');
+            $('[name="offering_id_delete"]').val(offering_id);
+        });
 
         $('#import_csv').on('submit', function(event){
 		event.preventDefault();

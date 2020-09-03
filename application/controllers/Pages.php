@@ -16,6 +16,13 @@ class Pages extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function load_all_schedules()
+	{
+
+		$data = $this->page_model->all_subject_offering_list();
+		echo json_encode($data);
+	}
+
 	public function fetchSubjectName()
 	{
 		if ($this->input->post('subject_code')) {
@@ -209,6 +216,13 @@ class Pages extends CI_Controller
 	public function delete_subject()
 	{
 		$data = $this->page_model->delete_subjectdata();
+		echo json_encode($data);
+	}
+	
+	public function delete_subject_offering()
+	{
+
+		$data = $this->page_model->delete_subject_offeringdata();
 		echo json_encode($data);
 	}
 

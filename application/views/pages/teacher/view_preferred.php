@@ -16,7 +16,7 @@
                         <nav>
                             <ul class="metismenu" id="menu">
                                 <li>
-                                    <a href="<?php echo base_url('teacher_dashboard');?>)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                    <a href="<?php echo base_url('teacher_dashboard');?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                                 </li>          
                                 <li class="active">
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Preferred Schedule</span></a>

@@ -143,7 +143,7 @@ class Page_model extends CI_Model
             'subject_id' => $this->input->post('subject_id'),
             'room_id' => $this->input->post('room_id'),
             'time_start' => $this->input->post('time_start'),
-            'time_end' => $this->input->post('time_start'),
+            'time_end' => $this->input->post('time_end'),
         );
 
         $result = $this->db->insert('subject_offering', $data);
@@ -200,6 +200,14 @@ class Page_model extends CI_Model
         $subject_code = $this->input->post('subject_code');
         $this->db->where('subject_code', $subject_code);
         $result = $this->db->delete('subject');
+        return $result;
+    }
+
+    public function delete_subject_offeringdata()
+    {
+        $offering_id = $this->input->post('offering_id');
+        $this->db->where('offering_id', $offering_id);
+        $result = $this->db->delete('subject_offering');
         return $result;
     }
 
@@ -373,6 +381,25 @@ class Page_model extends CI_Model
             ->from('subject_offering')
             ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
             ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
+            ->where('faculty.faculty_id', $this->session->userdata('faculty_id'))
+            ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
+            ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
+            ->join('room', 'room.room_id=subject_offering.room_id', 'left')
+            
+            //->join('advisement', 'advisement.advisement_id=subject_offering.subject_id', 'left')
+            ->order_by('offering_id', 'ASC')
+            ->get();
+        return $query->result();
+
+    }
+
+    public function all_subject_offering_list()
+    {
+        $query = $this->db->select('*')
+            ->from('subject_offering')
+            ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
+            ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
+            //->where('faculty.faculty_id', $this->session->userdata('faculty_id'))
             ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
             ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
             ->join('room', 'room.room_id=subject_offering.room_id', 'left')
