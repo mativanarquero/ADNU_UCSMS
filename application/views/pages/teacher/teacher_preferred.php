@@ -359,7 +359,6 @@ $(document).ready(function(){
    });
     
        $('#mydata2 tbody:last-child').append(
-           '<tr>'+
            '<td>'+ subject_code + '</td>' +
            '<td>'+ subject_name + '</td>'+
            '</tr>'
