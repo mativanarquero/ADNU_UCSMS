@@ -46,15 +46,10 @@
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                             <ul class="collapse">
                                 <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
+                                <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Subject Request</span></a>
-                            <ul class="collapse">
-                                <li><a href="<?php echo base_url('my_request') ?>">My Request</a></li>
-                                <li><a href="<?php echo base_url('chair_request') ?>">Other Request</a></li>
-                            </ul>
-                        </li>
+                        
                         <li>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                 <span>Reports</span></a>
@@ -63,6 +58,7 @@
                                 <li><a href="table-layout.html">table layout</a></li>
                                 <li><a href="datatable.html">datatable</a></li>
                             </ul>
+                            <a href="<?php echo base_url('chairperson_setting')?>"><i class="ti-dashboard"></i><span>MyProfile</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -289,7 +285,7 @@
 
                             </ul>
                             <form>
-                                <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule" data-target="#exampleModalCenter"> </input>
+                                <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
 
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -301,16 +297,9 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center">
-                                                <p>Programming 1</p>
-                                                <p><b>Lec</b></p>
-                                                <p>Monday - Wednesday</p>
-                                                <p>7:30 AM - 8:30 AM</p>
-                                                <p>AL213</p>
-                                                <p><b>Lab</b></p>
-                                                <p>Tuesday - Thursday</p>
-                                                <p>8:00 AM - 9:30 AM</p>
-                                                <p>AL213</p>
-                                                <p>Sixto, John G.</p>
+                                                <p>Schedule Sucessfully Created</p>
+                                                <p><b></b></p>
+                                                <p></p>
 
                                             </div>
                                             <div class="modal-footer">
@@ -339,7 +328,8 @@
                                         <div class="card card-blue-dark">
                                             <h3> <i class="fa fa-user"></i> </h3>
                                             <h6><?php echo $teacher['faculty_name'] ?></h6>
-                                            <div class="pad-top"><a href="view_schedule.php">View Schedule <i class="fa fa-chevron-right"></i></a></div>
+                                            <div class="pad-top"><a href="<?php echo base_url('all_Schedules')?>">View Schedule <i class="fa fa-chevron-right"></i></a></div>
+                                            
                                         </div>
 
                                 <?php }
@@ -407,6 +397,7 @@
                     time_end: time_end
                 },
                 success: function(data) {
+ 
                     $('[name="faculty_id"]').val("");
                     $('[name="day"]').val("");
                     $('[name="subject_id"]').val("");
@@ -415,6 +406,7 @@
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");
                     $('#Modal_Add').modal('hide');
+                    $('#exampleModalCenter').modal('show');
                 }
 
             });

@@ -213,6 +213,12 @@ class Pages extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function add_subject()
+	{
+		$data = $this->page_model->add_subjectdata();
+		echo json_encode($data);
+	}
+
 	public function delete_subject()
 	{
 		$data = $this->page_model->delete_subjectdata();

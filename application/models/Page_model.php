@@ -150,6 +150,7 @@ class Page_model extends CI_Model
         return $result;
     }
 
+
     public function insert_semesterdata()
     {
         $status = "2";
@@ -331,6 +332,7 @@ class Page_model extends CI_Model
         return $query->result();
     }
 
+    
     public function subject_list()
     {
         $department_id = $this->session->userdata('department_id');
@@ -340,6 +342,9 @@ class Page_model extends CI_Model
             ->get();
         return $query->result();
     }
+    
+
+    
 
     public function profile_list()
     {
