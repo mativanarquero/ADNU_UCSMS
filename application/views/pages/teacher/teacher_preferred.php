@@ -174,12 +174,6 @@ if(!empty($_POST['subject'])) {
 
 
 
-                            <h1>Course Title</h1>
-                            <input type="text" id="subject_name" name="subject_name" value="" readonly="readonly">
-                            <div style="text-align: center">
-                                <h1>LECTURE</h1>
-                            </div>
-
                             <h1>Day Scheme</h1>
                             <select class="custom-select" name="day" id="day">
                                 <option value="">Select Day Scheme</option>
@@ -194,7 +188,7 @@ if(!empty($_POST['subject'])) {
 
 
                             <div class="half">
-                                <h1>Select Time Start</h1>
+                                <h1>Preferred Time Start</h1>
                                 <select class="custom-select" name="time_start" id="time_start">
                                     <option value="">Select Time Start</option>
                                     <?php
@@ -209,7 +203,7 @@ if(!empty($_POST['subject'])) {
                             </div>
 
                             <div class="half">
-                                <h1>Start Time End</h1>
+                                <h1>Preferred Time End</h1>
                                 <select class="custom-select" name="time_end" id="time_end">
                                     <option value="">Select Time End</option>
                                     <?php
@@ -223,45 +217,21 @@ if(!empty($_POST['subject'])) {
 
                             </div>
 
-                            <h1>Room</h1>
-                            <select class="custom-select" name="room" id="room">
-                                <option value="">Select Room</option>
+                            <h1>Loading Scheme</h1>
+                            <select class="custom-select" name="loading_scheme" id="loading_scheme">
+                                <option value="">Select loading scheme</option>
                                 <?php
-                                foreach ($room as $row) {
-                                    echo '<option value="' . $row->room_id . '">' . $row->room_name . '</option>';
+                                foreach ($loading_scheme as $row) {
+                                    echo '<option value="' . $row->loading_id . '">' . $row->loading_name . '</option>';
                                 }
                                 ?>
 
                             </select>
-
-
-
-                            <h1>Professsor</h1>
-                            <select class="custom-select" name="faculty" id="faculty">
-                                <option value="">Select Professor</option>
-                                <?php
-                                foreach ($faculty as $row) {
-                                    echo '<option value="' . $row->faculty_id . '">' . $row->faculty_name . '</option>';
-                                }
-                                ?>
-
-                            </select>
-
-
-                            <h1>Legend</h1>
-                            <ul class="color-picker">
-                                <li class="blue"></li>
-                                <li class="red color-selected"></li>
-                                <li class="yellow"></li>
-                                <li class="purple"></li>
-                                <li class="green"></li>
-                                <li class="orange"></li>
-                                <li class="gray"></li>
                                 
 
                             </ul>
                             <form>
-                                <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
+                                <input type="button" type="submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
 
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -352,12 +322,12 @@ if(!empty($_POST['subject'])) {
 
 
     <script>
-        $('#btn_create').on('click', function() {
+        $('#btn_submit').on('click', function() {
             var faculty_id = $('#faculty').val();
             var day = $('#day').val();
             var subject_id = $('#advisement').val();
             //var schedule_id = $('#schedule_id').val();
-            var room_id = $('#room').val();
+            var loading_id = $('#loading_scheme').val();
             var time_start = $('#time_start').val();
             var time_end = $('#time_end').val();
             $.ajax({
@@ -368,7 +338,7 @@ if(!empty($_POST['subject'])) {
                     faculty_id: faculty_id,
                     day: day,
                     subject_id: subject_id,
-                    room_id: room_id,
+                    loading_id: loading_id,
                     time_start: time_start,
                     time_end: time_end
                 },
@@ -378,7 +348,7 @@ if(!empty($_POST['subject'])) {
                     $('[name="day"]').val("");
                     $('[name="subject_id"]').val("");
                     $('[name="schedule_id"]').val("");
-                    $('[name="room_id"]').val("");
+                    $('[name="loading_id"]').val("");
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");
                     $('#Modal_Add').modal('hide');
