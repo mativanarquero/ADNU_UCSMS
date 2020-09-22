@@ -394,6 +394,65 @@ if(!empty($_POST['subject'])) {
                     $('#lab_2').prop('disabled', this.value != 'Computer Programming I');
                     $('#lab_3').prop('disabled', this.value != 'Computer Programming I');
 
+<<<<<<< HEAD
+=======
+    $('#add_semester').click(function()
+    {
+       var semester = $('#semester').val();
+       var units = $('#units').val();
+
+       $('#mydata tbody:last-child').append(
+           '<tr>'+
+           '<td>'+ semester + '</td>' +
+           '<td>'+ units + '</td>'+
+           '</tr>'
+       ); 
+    });
+
+    $('#subject_code').change(function(){
+  var subject_code = $('#subject_code').val();
+  if(subject_code != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>pages/fetchSubjectName",
+    method:"POST",
+    data:{subject_code:subject_code},
+    success:function(data)
+    {
+     $('#subject_name').html(data);
+    }
+   });
+  }
+  else
+  {
+   $('#subject_name').html('<option value="">Select Subject Name</option>');
+  }
+ });
+
+
+ $('#add_subject').click(function()
+    {
+       var subject_code = $('#subject_code').val();
+       //var subject_name = $('#subject_name').val();
+
+       $.ajax({
+    url:"<?php echo base_url(); ?>pages/fetchSubject",
+    method:"POST",
+    data:{subject_code:subject_code},
+    success:function(data)
+    {
+     $('#subject_code').html(data);
+    }
+   });
+    
+       $('#mydata2 tbody:last-child').append(
+           '<td>'+ subject_code + '</td>' +
+           '<td>'+ subject_name + '</td>'+
+           '</tr>'
+       ); 
+    });
+    
+>>>>>>> 18d626e9c2e269f383ca6c1c19ef5b0e5087e913
 
                 })
                 .change();

@@ -125,10 +125,10 @@ class Page_model extends CI_Model
 
     public function add_subjectdata()
     {
-        $faculty_id = $this->session->userdata('faculty_id');
+        //$faculty_id = $this->session->userdata('faculty_id');
         $data = array(
             'faculty_id' => $this->session->userdata('faculty_id'),
-            'subject_id' => $this->input->post('subject_id'),
+            'subject_code' => $this->input->post('subject_code'),
         );
 
         $result = $this->db->insert('preferred_subject', $data);
