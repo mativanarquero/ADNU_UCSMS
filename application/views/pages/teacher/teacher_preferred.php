@@ -155,6 +155,7 @@
     <input type="checkbox" name="subject[]" id="ICST104" value="ICST104">
     <input type="submit" />
 </form>
+
 <?php
 if(!empty($_POST['subject'])) {
     foreach($_POST['subject'] as $check) {

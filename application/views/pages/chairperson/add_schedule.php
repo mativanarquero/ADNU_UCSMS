@@ -28,7 +28,7 @@
                             <a href="javascript:void(0)" aria-expanded="true"><i class="ti-timer"></i><span>Manage Schedule</span></a>
                             <ul class="collapse">
                                 <li class="active"><a href="<?php echo base_url('') ?>">Add Schedule</a></li>
-                                <li><a href="<?php echo base_url('view_preferred_schedule') ?>">View Preferred Schedule</a></li>
+                                
 
 
 

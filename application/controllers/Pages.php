@@ -30,6 +30,8 @@ class Pages extends CI_Controller
 		}
 	}
 
+	
+
 	public function view_semester()
 	{
 		$data['setting'] = $this->page_model->view_semester();
@@ -235,6 +237,12 @@ class Pages extends CI_Controller
 	public function update_subject()
 	{
 		$data = $this->page_model->update_subjectdata();
+		echo json_encode($data);
+	}
+
+	public function update_schedule()
+	{
+		$data = $this->page_model->update_scheduledata();
 		echo json_encode($data);
 	}
 

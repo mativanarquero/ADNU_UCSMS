@@ -253,6 +253,26 @@ class Page_model extends CI_Model
         return $result;
     }
 
+    function update_scheduledata()
+    {
+        $subject_id = $this->input->post('subject_id');
+        $time_start = $this->input->post('time_start');
+        $time_end = $this->input->post('time_end');
+        $room_id = $this->input->post('room_id');
+        $Day    = $this->input->post('Day');
+        $faculty_id    = $this->input->post('faculty_id');
+
+        //$this->db->set('subject_id', $subject_id);
+        $this->db->set('time_start', $time_start);
+        $this->db->set('time_end', $time_end);
+        $this->db->set('room_id', $room_id);
+        $this->db->set('Day', $Day);
+        $this->db->set('subject_id', $subject_id);
+        $this->db->where('subject_id', $subject_id);
+        $result = $this->db->update('subject_offering');
+        return $result;
+    }
+
 
 
     function update_profiledata()

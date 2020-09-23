@@ -238,6 +238,79 @@
                 </div>
 
 
+                <!-- START MODAL INSERT-->
+                <form>
+
+<div class="modal fade" id="Modal_Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-md" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add New Subject</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <div class="form-group row">
+            <label class="col-md-6 col-form-label"><b>Subject Code</b></label>
+            <label class="col-md-6 col-form-label"><b>Subject Name</b></label>
+            <div class="col-md-6">
+              <input type="text" name="subject_code" id="subject_code" class="form-control" placeholder="Subject Code">
+            </div>
+          
+            <div class="col-md-6">
+              <input type="text" name="subject_name" id="subject_name" class="form-control" placeholder="Subject Name">
+            </div>
+            
+        </div>
+        <div class="form-group row">
+            <label class="col-md-6 col-form-label"><b>Subject Year</b></label>
+            <label class="col-md-6 col-form-label"><b>Credit Units</b></label>
+            <div class="col-md-6">
+            <select name="subject_year" id="subject_year" class="form-control">
+            <option value="1st">1st year </option>
+            <option value="2nd">2nd year</option>
+            <option value="3rd">3rd year</option>
+            <option value="4th">4th year</option>
+            </select>
+            </div>
+            <div class="col-md-6">
+            <select name="credit_units" id="credit_units" class="form-control">
+            <option value="2">2 units</option>
+            <option value="3">3 units</option>
+            <option value="6">6 units</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          
+            <label class="col-md-6 col-form-label"><b>Lec Units</b></label>
+            <label class="col-md-6 col-form-label"><b>Lab Units</b></label>
+            <div class="col-md-6">
+            <select name="lec_units" id="lec_units" class="form-control">
+            <option value="2">2 units</option>
+            <option value="3">3 units</option>
+            </select>
+            </div>
+            <div class="col-md-6">
+            <select name="lab_units" id="lab_units" class="form-control">
+            <option value="0">0 units</option>
+            <option value="1">1 units</option>
+            </select>
+            </div>
+
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" type="submit" id="btn_add" class="btn btn-primary">Add</button>
+  </div>
+</div>
+</div>
+</div>
+</form>
+<!-- END MODAL INSERT -->
 
 
 <!-- START MODAL DELETE-->
@@ -264,6 +337,94 @@
             </div>
             </form>
 <!-- END MODAL DELETE-->
+
+<!-- START MODAL UPDATE-->
+<form>
+
+<div class="modal fade" id="Modal_Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-md" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Update Subject Offering</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <div class="form-group row">
+            <label class="col-md-6 col-form-label"><b>Subject Code</b></label>
+            <label class="col-md-6 col-form-label"><b>Subject Name</b></label>
+            <div class="col-md-6">
+              <input type="text" name="subject_code_edit" id="subject_code_edit" class="form-control" placeholder="Subject Code" readonly>
+            </div>
+          
+            <div class="col-md-6">
+              <input type="text" name="subject_name_edit" id="subject_name_edit" class="form-control" placeholder="Subject Name" readonly>
+            </div>
+            
+        </div>
+        <div class="form-group row">
+            <label class="col-md-6 col-form-label"><b>Start Time</b></label>
+            <label class="col-md-6 col-form-label"><b>End Time</b></label>
+            <div class="col-md-6">
+            <select name="time_start_edit" id="time_start_edit" class="form-control">
+            <option value="1">7:30 AM </option>
+            <option value="2">8:00 AM</option>
+            <option value="3">8:30 AM</option>
+            <option value="4">9:00 AM</option>
+            </select>
+            </div>
+            <div class="col-md-6">
+            <select name="time_end_edit" id="time_end_edit" class="form-control">
+            <option value="1">8:30 AM </option>
+            <option value="2">9:00 AM</option>
+            <option value="3">9:30 AM</option>
+            <option value="4">10:00 AM</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          
+            <label class="col-md-6 col-form-label"><b>Room</b></label>
+            <label class="col-md-6 col-form-label"><b>Day</b></label>
+
+            <div class="col-md-6">
+            <select name="room_id_edit" id="room_name_edit" class="form-control">
+            <option value="1">AL213</option>
+            <option value="2">AL214</option>
+            </select>
+            </div>
+            <div class="col-md-6">
+            <select name="Day_edit" id="Day_edit" class="form-control">
+            <option value="MWF">MWF</option>
+            <option value="TTH">TTH</option>
+            <option value="SAT">SAT</option>
+            </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-7 col-form-label"><b>Teacher</b></label>   
+
+          <div class="col-md-6">
+            <select name="faculty_id_edit" id="faculty_id_edit" class="form-control">
+            <option value="2">John G. Sixto</option>
+            <option value="3">Marianne P. Ang</option>
+            </select>
+            </div>
+                                     
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" type="submit" id="btn_edit" class="btn btn-primary">Update</button>
+  </div>
+</div>
+</div>
+</div>
+</form>
+<!-- END MODAL UPDATE-->
 
 
 
@@ -315,6 +476,7 @@ $(document).ready(function(){
                                '<td>'+data[i].Day+'</td>'+
                                '<td>'+data[i].faculty_name+'</td>'+
                                '<td style="text-align:center;">'+
+                               '<a href="javascript:void(0);" class="btn btn-info btn-sm item_edit" data-subject_code="'+data[i].subject_code+'" data-subject_name="'+data[i].subject_name+'" data-time_start="'+data[i].time_start+'" data-time_end_name="'+data[i].time_end_name+'" data-room_name="'+data[i].room_name+'" data-Day="'+data[i].Day +'" data-faculty_name="'+data[i].faculty_name +'">Edit</a>'+' '+
                                '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-offering_id="'+data[i].offering_id+'">Delete</a>'+
                                '</td>' +
                                '</tr>';
@@ -353,6 +515,55 @@ $(document).ready(function(){
             $('#Modal_Delete').modal('show');
             $('[name="offering_id_delete"]').val(offering_id);
         });
+
+        $('#show_data').on('click','.item_edit',function(){
+            var subject_code = $(this).data('subject_code');
+            var subject_name = $(this).data('subject_name');
+            var time_start = $(this).data('time_start');
+            var time_end_name = $(this).data('time_end_name');
+            var room_name    = $(this).data('room_name');
+            var Day    = $(this).data('Day');
+            var faculty_name    = $(this).data('faculty_name');
+
+            $('#Modal_Edit').modal('show');
+            $('[name="subject_code_edit"]').val(subject_code);
+            $('[name="subject_name_edit"]').val(subject_name);
+            $('[name="time_start_edit"]').val(time_start);
+            $('[name="time_end_name_edit"]').val(time_end_name);
+            $('[name="room_name_edit"]').val(room_name);
+            $('[name="Day_edit"]').val(Day);
+            $('[name="faculty_name_edit"]').val(faculty_name);
+    
+        });
+
+        $('#btn_edit').on('click',function(){
+            var subject_id = $('#subject_id_edit').val();
+            var time_start = $('#time_start_edit').val();
+            var time_end = $('#time_end_edit').val();
+            var room_id = $('#room_id_edit').val();
+            var Day    = $('#Day_edit').val();
+            var faculty_id    = $('#faculty_id_edit').val();
+            //var faculty_name    = $('#faculty_name_edit').val();
+            
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo site_url('pages/update_schedule')?>",
+                dataType : "JSON",
+                data : {subject_id:subject_id,  time_start:time_start,  time_end:time_end,  room_id:room_id, Day:Day, faculty_id:faculty_id},
+                success: function(data){
+                   $('[name="subject_id_edit"]').val("");
+                   $('[name="time_start_edit"]').val("");
+                   $('[name="time_end_edit"]').val("");
+                   $('[name="room_id_edit"]').val("");
+                   $('[name="Day_edit"]').val("");
+                   $('[name="faculty_id_edit"]').val("");
+                   $('#Modal_Edit').modal('hide');
+                   load_all_schedules();
+                }
+            });
+            return false;
+        });
+
 
         $('#import_csv').on('submit', function(event){
 		event.preventDefault();
