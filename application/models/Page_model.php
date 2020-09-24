@@ -139,7 +139,7 @@ class Page_model extends CI_Model
     {
         $data = array(
             'faculty_id' => $this->input->post('faculty_id'),
-            'Day' => $this->input->post('day'),
+            'day' => $this->input->post('day'),
             'subject_id' => $this->input->post('subject_id'),
             'room_id' => $this->input->post('room_id'),
             'time_start' => $this->input->post('time_start'),
@@ -253,22 +253,23 @@ class Page_model extends CI_Model
         return $result;
     }
 
-    function update_scheduledata()
+    function update_subjectofferingdata()
     {
+        $offering_id = $this->input->post('offering_id');
         $subject_id = $this->input->post('subject_id');
         $time_start = $this->input->post('time_start');
         $time_end = $this->input->post('time_end');
         $room_id = $this->input->post('room_id');
-        $Day    = $this->input->post('Day');
+        $day    = $this->input->post('day');
         $faculty_id    = $this->input->post('faculty_id');
 
         //$this->db->set('subject_id', $subject_id);
         $this->db->set('time_start', $time_start);
         $this->db->set('time_end', $time_end);
         $this->db->set('room_id', $room_id);
-        $this->db->set('Day', $Day);
+        $this->db->set('day', $day);
         $this->db->set('subject_id', $subject_id);
-        $this->db->where('subject_id', $subject_id);
+        $this->db->where('offering_id', $offering_id);
         $result = $this->db->update('subject_offering');
         return $result;
     }

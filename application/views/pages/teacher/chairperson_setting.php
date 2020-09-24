@@ -185,7 +185,7 @@
              <div class="row">
             
             <div class="col md-2" style="text-align:left">
-            <a href="javascript:void(0);" class="btn btn-primary btn-xs mb-3" data-target="#Modal_password" data-toggle="modal"><i class="fa fa-book"></i> Update Password</a>
+            <a href="javascript:void(0);" class="btn btn-primary btn-xs mb-3" data-target="#edit_profile" data-toggle="modal"><i class="fa fa-book"></i> Update Profile</a>
             </div>
               
             <div class="col md-6" style="text-align:left">

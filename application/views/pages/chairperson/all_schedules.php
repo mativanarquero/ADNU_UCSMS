@@ -135,7 +135,7 @@
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
                                             <div class="notify-text">
-                                                <p>New Commetns On Post</p>
+                                                <p>New Comments On Post</p>
                                                 <span>30 Seconds ago</span>
                                             </div>
                                         </a>
@@ -197,16 +197,16 @@
                     <div class="card">
                             <div class="card-body">
                                     <div class="row">
-                                            <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <p class="text-primary"><?php echo $this->session->userdata('department_name');?></p>
                                         </div>
-
-                                        <?php if ($this->session->flashdata('import')) { ?>
-                                       <div class="alert alert-success"> <?= $this->session->flashdata('import') ?> </div>
-                                        <?php } ?>
-
+                                        <div class="col-md-6" style="text-align:right">
+                                            
+                                                <a href="javascript:void(0);" class="btn btn-primary btn-xs mb-3" data-target="#Modal_Add" data-toggle="modal"><i class="fa fa-book"></i> Add</a>
+                                              
+                                              
+                                            </div>
                                 </div>
-                                
                                 <div class="row">
                                 <div class="col-12">
                                 <div class="col-md-12">
@@ -245,7 +245,7 @@
 <div class="modal-dialog modal-md" role="document">
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Add New Subject</h5>
+    <h5 class="modal-title" id="exampleModalLabel">Add New Subject Offering</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -255,50 +255,66 @@
             <label class="col-md-6 col-form-label"><b>Subject Code</b></label>
             <label class="col-md-6 col-form-label"><b>Subject Name</b></label>
             <div class="col-md-6">
-              <input type="text" name="subject_code" id="subject_code" class="form-control" placeholder="Subject Code">
+              <input type="text" name="subject_code" id="subject_code" class="form-control" placeholder="Subject Code" >
             </div>
           
             <div class="col-md-6">
-              <input type="text" name="subject_name" id="subject_name" class="form-control" placeholder="Subject Name">
+              <input type="text" name="subject_name" id="subject_name" class="form-control" placeholder="Subject Name" >
             </div>
             
         </div>
         <div class="form-group row">
-            <label class="col-md-6 col-form-label"><b>Subject Year</b></label>
-            <label class="col-md-6 col-form-label"><b>Credit Units</b></label>
+            <label class="col-md-6 col-form-label"><b>Start Time</b></label>
+            <label class="col-md-6 col-form-label"><b>End Time</b></label>
             <div class="col-md-6">
-            <select name="subject_year" id="subject_year" class="form-control">
-            <option value="1st">1st year </option>
-            <option value="2nd">2nd year</option>
-            <option value="3rd">3rd year</option>
-            <option value="4th">4th year</option>
+            <select name="time_start" id="time_start" class="form-control">
+            <option value="1">7:30 AM </option>
+            <option value="2">8:00 AM</option>
+            <option value="3">8:30 AM</option>
+            <option value="4">9:00 AM</option>
             </select>
             </div>
             <div class="col-md-6">
-            <select name="credit_units" id="credit_units" class="form-control">
-            <option value="2">2 units</option>
-            <option value="3">3 units</option>
-            <option value="6">6 units</option>
+            <select name="time_end" id="time_end" class="form-control">
+            <option value="1">8:30 AM </option>
+            <option value="2">9:00 AM</option>
+            <option value="3">9:30 AM</option>
+            <option value="4">10:00 AM</option>
             </select>
             </div>
         </div>
 
         <div class="form-group row">
           
-            <label class="col-md-6 col-form-label"><b>Lec Units</b></label>
-            <label class="col-md-6 col-form-label"><b>Lab Units</b></label>
+            <label class="col-md-6 col-form-label"><b>Room</b></label>
+            <label class="col-md-6 col-form-label"><b>Day</b></label>
+
             <div class="col-md-6">
-            <select name="lec_units" id="lec_units" class="form-control">
-            <option value="2">2 units</option>
-            <option value="3">3 units</option>
+            <select name="room_id" id="room_id" class="form-control">
+            <option value="1">AL213</option>
+            <option value="2">AL214</option>
             </select>
             </div>
             <div class="col-md-6">
-            <select name="lab_units" id="lab_units" class="form-control">
-            <option value="0">0 units</option>
-            <option value="1">1 units</option>
+            <select name="day" id="day" class="form-control">
+            <option value="MWF">MWF</option>
+            <option value="TTH">TTH</option>
+            <option value="SAT">SAT</option>
             </select>
             </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-7 col-form-label"><b>Teacher</b></label>   
+
+          <div class="col-md-6">
+            <select name="faculty_id" id="faculty_id" class="form-control">
+            <option value="2">John G. Sixto</option>
+            <option value="3">Marianne P. Ang</option>
+            </select>
+            </div>
+                                     
+
 
         </div>
   </div>
@@ -372,6 +388,14 @@
             <option value="2">8:00 AM</option>
             <option value="3">8:30 AM</option>
             <option value="4">9:00 AM</option>
+            <option value="5">9:30 AM</option>
+            <option value="6">10:00 AM</option>
+            <option value="7">10:30 AM</option>
+            <option value="8">11:00 AM</option>
+            <option value="9">11:30 AM</option>
+            <option value="10">12:00 PM</option>
+            <option value="11">12:30 PM</option>
+            <option value="12">1:00 PM</option>
             </select>
             </div>
             <div class="col-md-6">
@@ -380,6 +404,13 @@
             <option value="2">9:00 AM</option>
             <option value="3">9:30 AM</option>
             <option value="4">10:00 AM</option>
+            <option value="5">10:30 AM</option>
+            <option value="6">11:00 AM</option>
+            <option value="7">11:30 AM</option>
+            <option value="8">12:00 PM</option>
+            <option value="9">12:30 PM</option>
+            <option value="10">1:00 PM</option>
+            <option value="11">1:30 PM</option>
             </select>
             </div>
         </div>
@@ -390,13 +421,16 @@
             <label class="col-md-6 col-form-label"><b>Day</b></label>
 
             <div class="col-md-6">
-            <select name="room_id_edit" id="room_name_edit" class="form-control">
+            <select name="room_id_edit" id="room_id_edit" class="form-control">
             <option value="1">AL213</option>
             <option value="2">AL214</option>
+            <option value="3">AL215</option>
+            <option value="4">AL216</option>
+            <option value="5">AL217</option>
             </select>
             </div>
             <div class="col-md-6">
-            <select name="Day_edit" id="Day_edit" class="form-control">
+            <select name="day_edit" id="day_edit" class="form-control">
             <option value="MWF">MWF</option>
             <option value="TTH">TTH</option>
             <option value="SAT">SAT</option>
@@ -476,7 +510,8 @@ $(document).ready(function(){
                                '<td>'+data[i].Day+'</td>'+
                                '<td>'+data[i].faculty_name+'</td>'+
                                '<td style="text-align:center;">'+
-                               '<a href="javascript:void(0);" class="btn btn-info btn-sm item_edit" data-subject_code="'+data[i].subject_code+'" data-subject_name="'+data[i].subject_name+'" data-time_start="'+data[i].time_start+'" data-time_end_name="'+data[i].time_end_name+'" data-room_name="'+data[i].room_name+'" data-Day="'+data[i].Day +'" data-faculty_name="'+data[i].faculty_name +'">Edit</a>'+' '+
+                               //'<a href="javascript:void(0);" class="btn btn-info btn-sm item_edit" data-offering_id="'+data[i].offering_id+'"data-subject_code="'+data[i].subject_code+'" data-subject_name="'+data[i].subject_name+'" data-time_start="'+data[i].time_start+'" data-time_end_name="'+data[i].time_end_name+'" data-room_name="'+data[i].room_name+'" data-Day="'+data[i].Day +'" data-faculty_name="'+data[i].faculty_name +'">Edit</a>'+' '+
+                               '<a href="javascript:void(0);" class="btn btn-info btn-sm item_edit" data-subject_code="'+data[i].subject_code+'" data-subject_name="'+data[i].subject_name+'" data-time_start="'+data[i].time_start+'" data-time_end="'+data[i].time_end+ '" data-offering_id="'+data[i].offering_id+'" data-faculty_id="'+data[i].faculty_id+'" data-day="'+data[i].day+'" data-subject_id="'+data[i].subject_id+'" data-room_id="'+data[i].room_id+'" >Edit</a>'+' '+
                                '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-offering_id="'+data[i].offering_id+'">Delete</a>'+
                                '</td>' +
                                '</tr>';
@@ -485,6 +520,35 @@ $(document).ready(function(){
                     $('#show_data').html(html); 
             }
         });
+        $('#btn_add').on('click',function(){
+            var offering_id = $('#offering_id').val();
+            var faculty_id = $('#faculty_id').val();
+            var day = $('#day').val();
+            var subject_id = $('#subject_id').val();
+            var room_id    = $('#room_id').val();
+            var time_start    = $('#time_start').val();
+            var time_end    = $('#time_end').val();
+            $.ajax({
+                type     : "POST",
+                url      : "<?php echo site_url('pages/insert_subjectoffering')?>",
+                dataType : "JSON",
+                data     : {offering_id:offering_id, faculty_id:faculty_id, day:day, subject_id:subject_id, room_id:room_id, time_start:time_start, time_end:time_end},
+                success  : function(data){
+                    $('[name="offering_id"]').val("");
+                    $('[name="faculty_id"]').val("");
+                    $('[name="day"]').val("");
+                    $('[name="subject_id"]').val("");
+                    $('[name="room_id"]').val("");
+                    $('[name="time_start"]').val("");
+                    $('[name="time_end"]').val("");
+                    $('#in').modal('hide');
+                    load_all_schedules(); 
+                } 
+    });
+            
+            return false;
+    });
+
 
         $('#show_data').on('click','.item_delete',function(){
             var offering_id = $(this).data('offering_id');
@@ -520,42 +584,44 @@ $(document).ready(function(){
             var subject_code = $(this).data('subject_code');
             var subject_name = $(this).data('subject_name');
             var time_start = $(this).data('time_start');
-            var time_end_name = $(this).data('time_end_name');
-            var room_name    = $(this).data('room_name');
-            var Day    = $(this).data('Day');
-            var faculty_name    = $(this).data('faculty_name');
+            var time_end = $(this).data('time_end');
+            var room_id    = $(this).data('room');
+            var day    = $(this).data('day');
+            var faculty_id    = $(this).data('faculty_id');
 
             $('#Modal_Edit').modal('show');
             $('[name="subject_code_edit"]').val(subject_code);
             $('[name="subject_name_edit"]').val(subject_name);
             $('[name="time_start_edit"]').val(time_start);
-            $('[name="time_end_name_edit"]').val(time_end_name);
-            $('[name="room_name_edit"]').val(room_name);
-            $('[name="Day_edit"]').val(Day);
-            $('[name="faculty_name_edit"]').val(faculty_name);
+            $('[name="time_end_edit"]').val(time_end);
+            $('[name="room_id"]').val(room_id);
+            $('[name="day_edit"]').val(day);
+            $('[name="faculty_id_edit"]').val(faculty_id);
     
         });
 
         $('#btn_edit').on('click',function(){
+            var offering_id = $('#offering_id_edit').val();
             var subject_id = $('#subject_id_edit').val();
             var time_start = $('#time_start_edit').val();
             var time_end = $('#time_end_edit').val();
             var room_id = $('#room_id_edit').val();
-            var Day    = $('#Day_edit').val();
+            var day    = $('#day_edit').val();
             var faculty_id    = $('#faculty_id_edit').val();
             //var faculty_name    = $('#faculty_name_edit').val();
             
             $.ajax({
                 type : "POST",
-                url  : "<?php echo site_url('pages/update_schedule')?>",
+                url  : "<?php echo site_url('pages/update_subjectoffering')?>",
                 dataType : "JSON",
-                data : {subject_id:subject_id,  time_start:time_start,  time_end:time_end,  room_id:room_id, Day:Day, faculty_id:faculty_id},
+                data : {offering_id:offering_id, subject_id:subject_id,  time_start:time_start,  time_end:time_end,  room_id:room_id, day:day, faculty_id:faculty_id},
                 success: function(data){
+                    $('[name="offering_id_edit"]').val("");
                    $('[name="subject_id_edit"]').val("");
                    $('[name="time_start_edit"]').val("");
                    $('[name="time_end_edit"]').val("");
                    $('[name="room_id_edit"]').val("");
-                   $('[name="Day_edit"]').val("");
+                   $('[name="day_edit"]').val("");
                    $('[name="faculty_id_edit"]').val("");
                    $('#Modal_Edit').modal('hide');
                    load_all_schedules();
@@ -564,7 +630,7 @@ $(document).ready(function(){
             return false;
         });
 
-
+/*
         $('#import_csv').on('submit', function(event){
 		event.preventDefault();
 		$.ajax({
@@ -586,7 +652,7 @@ $(document).ready(function(){
 			}
 		})
 	});
-      
+  */    
         }
 
 

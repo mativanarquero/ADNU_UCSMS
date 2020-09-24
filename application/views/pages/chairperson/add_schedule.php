@@ -401,7 +401,7 @@
                     $('[name="faculty_id"]').val("");
                     $('[name="day"]').val("");
                     $('[name="subject_id"]').val("");
-                    $('[name="schedule_id"]').val("");
+                    //$('[name="schedule_id"]').val("");
                     $('[name="room_id"]').val("");
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");

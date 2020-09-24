@@ -240,9 +240,9 @@ class Pages extends CI_Controller
 		echo json_encode($data);
 	}
 
-	public function update_schedule()
+	public function update_subjectoffering()
 	{
-		$data = $this->page_model->update_scheduledata();
+		$data = $this->page_model->update_subjectofferingdata();
 		echo json_encode($data);
 	}
 
