@@ -187,7 +187,7 @@
 
                                               
                                     <h1>Course Code</h1>
-                                    <select class="custom-select" id="subject_code" name="subject">
+                                    <select class="custom-select" id="advisement" name="advisement">
                                             <option selected="selected" value="">Please Select...</option>
                                             <?php
                                             foreach($subject_list as $row)

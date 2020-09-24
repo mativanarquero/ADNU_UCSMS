@@ -48,19 +48,13 @@
                                 <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Subject Request</span></a>
-                            <ul class="collapse">
-                                <li><a href="<?php echo base_url('my_request') ?>">My Request</a></li>
-                                <li><a href="<?php echo base_url('chair_request') ?>">Other Request</a></li>
-                            </ul>
-                        </li>
+                       
                         <li>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                 <span>Reports</span></a>
                             <ul class="collapse">
-                                <li><a href="table-basic.html">basic table</a></li>
-                                <li><a href="table-layout.html">table layout</a></li>
+                                <li><a href="table-basic.html">My Schedule</a></li>
+                                <li><a href="table-layout.html">All Schedules</a></li>
                                 <li><a href="datatable.html">datatable</a></li>
                             </ul>
                         </li>
@@ -201,7 +195,6 @@
                             </div>
 
 
-
                             <h1>Course Title</h1>
                             <input type="text" id="subject_name" name="subject_name" value="" readonly="readonly">
                             <div style="text-align: center">
@@ -263,7 +256,6 @@
                             </select>
 
 
-
                             <h1>Professsor</h1>
                             <select class="custom-select" name="faculty" id="faculty">
                                 <option value="">Select Professor</option>
@@ -286,11 +278,11 @@
                                 <li class="orange"></li>
                                 <li class="gray"></li>
                                 
-
                             </ul>
-                            <form>
-                                <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule" data-target="#exampleModalCenter"> </input>
-
+                            
+                            
+                                <input type="button" type="button" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule Pop-upc" data-target="#exampleModalCenter"> </input>
+                        
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -301,16 +293,16 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center">
-                                                <p>Programming 1</p>
-                                                <p><b>Lec</b></p>
-                                                <p>Monday - Wednesday</p>
-                                                <p>7:30 AM - 8:30 AM</p>
-                                                <p>AL213</p>
-                                                <p><b>Lab</b></p>
-                                                <p>Tuesday - Thursday</p>
-                                                <p>8:00 AM - 9:30 AM</p>
-                                                <p>AL213</p>
-                                                <p>Sixto, John G.</p>
+                                            <li><a href="<?php echo base_url('add_schedule')?>"> </a></li>
+                                                <p><b></b></p>
+                                                <p>Schedule Sucessfully Created</p>
+                                                <p></p>
+                                                <p></p>
+                                                <p><b></b></p>
+                                                <p></p>
+                                                <p></p>
+                                                <p></p>
+                                                <p></p>
 
                                             </div>
                                             <div class="modal-footer">
@@ -319,7 +311,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                           
                         </div>
                     </div>
                 </div>
@@ -387,6 +379,7 @@
 
     <script>
         $('#btn_create').on('click', function() {
+
             var faculty_id = $('#faculty').val();
             var day = $('#day').val();
             var subject_id = $('#advisement').val();
@@ -415,8 +408,11 @@
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");
                     $('#Modal_Add').modal('hide');
+
+                    $('#exampleModalCenter').modal('show');
                 }
 
+                
             });
 
             return false;

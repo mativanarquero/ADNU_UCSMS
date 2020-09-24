@@ -42,7 +42,7 @@
                                         </ul>
                                     </li>
 
-                                    <li class="active">
+                                    <li>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Schedules</span></a>
                             <ul class="collapse">
                             <li><a href="<?php echo base_url('my_schedule.php') ?>"> My Schedule</a></li>
@@ -56,12 +56,12 @@
 
                                 
                               
-                                <li>
+                                <li class="active">
                                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                             <span>Reports</span></a>
                                         <ul class="collapse">
                                             <li><a href="table-basic.html">My Schedule</a></li>
-                                            <li><a href="table-layout.html">All Schedules</a></li>
+                                            <li><a href="report_all_schedules">All Schedules</a></li>
                                             <li><a href="datatable.html">datatable</a></li>
                                         </ul>
                                         </li>
@@ -197,7 +197,10 @@
                                 <div class="row">
                                 <div class="col-12">
                                 <div class="col-md-12">
+                                
                                     <table class="table table-striped" id="mydata">
+                                    <div class="table-responsive" id="mydata">  
+                                    
                                         <thead>
                                             <tr style="text-align:center">
                      
@@ -208,7 +211,7 @@
                                                 <th>ROOM</th>
                                                 <th>DAY</th>
                                                 <th>TEACHER</th>
-                                                <th>ACTION</th>
+                                                
                                                
                                             </tr>
                                         </thead>
@@ -218,6 +221,10 @@
                                     </table>
                                 </div>
                             </div>
+                            </div>
+                            
+                            <button name ="create_excel" id="create_excel" class="btn btn-success">Create Excel File<button>
+                            
                         </div>
                         </div>
                         </div>
@@ -302,7 +309,7 @@ $(document).ready(function(){
                                '<td>'+data[i].Day+'</td>'+
                                '<td>'+data[i].faculty_name+'</td>'+
                                '<td style="text-align:center;">'+
-                               '<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-offering_id="'+data[i].offering_id+'">Delete</a>'+
+                               //'<a href="javascript:void(0);" class="btn btn-danger btn-sm item_delete" data-offering_id="'+data[i].offering_id+'">Delete</a>'+
                                '</td>' +
                                '</tr>';
    
@@ -369,7 +376,18 @@ $(document).ready(function(){
 
 
 });
+
 </script>
+
+<script>  
+ $(document).ready(function(){  
+      $('#create_excel').click(function(){  
+           var excel_data = $('#mydata').html();  
+           var page = "excel.php?data=" + excel_data;  
+           window.location = page;  
+      });  
+ });  
+ </script>  
     
 
     </body>

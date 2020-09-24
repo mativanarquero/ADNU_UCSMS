@@ -43,7 +43,7 @@
                                     </li>
 
                                     <li class="active">
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Schedules</span></a>
+                            <li><a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Schedules</span></a>
                             <ul class="collapse">
                             <li><a href="<?php echo base_url('my_schedule.php') ?>"> My Schedule</a></li>
                                 <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
@@ -54,21 +54,8 @@
                                         <a href="<?php echo base_url('view_subject')?>"><i class="ti-dashboard"></i><span>Manage Subject</span></a>
                                 </li>
 
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Subject Request</span></a>
-                                    <ul class="collapse">
-                                        <li><a href="<?php echo base_url('my_request')?>">My Request</a></li>
-                                        <li><a href="<?php echo base_url('chair_request')?>">Other Request</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
-                                            <span>Overload</span></a>
-                                        <ul class="collapse">
-                                            <li><a href="table-basic.html">Overload subject</a></li>
-
-                                        </ul>
-                                        </li>
+                                
+                               
                                 <li>
                                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                             <span>Reports</span></a>

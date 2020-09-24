@@ -57,6 +57,7 @@ class Page_model extends CI_Model
         #$this->db->where('time_end_id');
         $query = $this->db->get('time_end');
 
+
         return $query->result();
     }
 

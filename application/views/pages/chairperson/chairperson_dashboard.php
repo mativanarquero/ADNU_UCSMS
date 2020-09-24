@@ -53,28 +53,15 @@
                                 <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
-
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Subject Request</span></a>
-                                    <ul class="collapse">
-                                        <li><a href="<?php echo base_url('my_request')?>">My Request</a></li>
-                                        <li><a href="<?php echo base_url('chair_request')?>">Other Request</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
-                                            <span>Overload</span></a>
-                                        <ul class="collapse">
-                                            <li><a href="table-basic.html">Overload subject</a></li>
-
-                                        </ul>
-                                        </li>
+                        
+                              
+                               
                                 <li>
                                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                             <span>Reports</span></a>
                                         <ul class="collapse">
-                                            <li><a href="table-basic.html">basic table</a></li>
-                                            <li><a href="table-layout.html">table layout</a></li>
+                                            <li><a href="report_my_schedule">My Schedule</a></li>
+                                            <li><a href="report_all_schedules">All Schedules</a></li>
                                             <li><a href="datatable.html">datatable</a></li>
                                         </ul>
                                         </li>

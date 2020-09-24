@@ -198,10 +198,41 @@ class Pages extends CI_Controller
 		$data = $this->page_model->insert_subjectdata();
 		echo json_encode($data);
 	}
-
+/*
+	public function check_schedule()
+	{
+		$room = $this->input->post('firstname');// get fiest name
+    	$time_start_id = $this->input->post('lastname');// get last name
+    	$this->db->select('user_id');
+    	$this->db->from('student');
+    	$this->db->where('firstname', $first_name);
+    	$this->db->where('lastname', $lase_name);
+    	$query = $this->db->get();
+    	$num = $query->num_rows();
+    	if ($num > 0) {
+        	return FALSE;
+    	} else {
+        	return TRUE;
+    	}
+	}
+*/
 
 	public function insert_subject_offering()
 	{
+		/*$this->form_validation->set_rules('room', 'time_start', 'time_end');
+		$this->form_validation->set_rules('faculty', 'faculty', 'required');
+
+
+		if ($this->form_validation->run() === FALSE) {
+
+			$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+			$this->load->view('pages/addSchedule');
+		} else {
+		*/
+		$this->form_validation->set_rules('Day', 'Day', 'required');
+		//$this->form_validation->set_rules('password', 'password', 'required');
+
+
 		$data = $this->page_model->insert_subject_offeringdata();
 		echo json_encode($data);
 	}
