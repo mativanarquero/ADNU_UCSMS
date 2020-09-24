@@ -27,8 +27,8 @@
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="ti-timer"></i><span>Manage Schedule</span></a>
                                     <ul class="collapse">
                                         <li><a href="<?php echo base_url('pages/addSchedule')?>">Add Schedule</a></li>
-                                        <li><a href="<?php echo base_url('view_preferred_schedule')?>">View Preferred Schedule</a></li>
-                                        <li><a href="<?php echo base_url('view_preferred_schedule')?>">View My Schedule</a></li>
+                                        
+                                       
                                 
                                     </ul>
                                 </li>
@@ -47,15 +47,20 @@
                                 </li>
 
                                 <li>
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>Schedules</span></a>
                             <ul class="collapse">
                                 <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
                                 <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
+<<<<<<< HEAD
                         
                               
                                
+=======
+
+                                
+>>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                                 <li>
                                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                             <span>Reports</span></a>

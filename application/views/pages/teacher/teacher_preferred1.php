@@ -131,130 +131,51 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Input Preferred Schedule</h4>
+                            <h4 class="page-title pull-left">Dashboard</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="teacher_dashboard">Home</a></li>
-                                <li><span>Add Preferred Schedule</span></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><span>Dashboard</span></li>
                             </ul>
                         </div>
                 </div>
             </div>
 
 
-            <div class="container-fluid ">
-                        <div class="add-module ">
-                            <div class="row">
-                                <div class="col col-7">
-                                    <form action="test.php" method="post">
-    <input type="checkbox" name="subject[]" id="ICST101" value="ICST101">
-    <label for="ICST101">ICST101</label> 
-    <input type="checkbox" name="subject[]" id="ICST102" value="ICST102">
-    <label for="ICST101">ICST102</label>
-    <input type="checkbox" name="subject[]" id="CSDC101" value="CSDC101">
-    <input type="checkbox" name="subject[]" id="ICST103" value="ICST103">
-    <input type="checkbox" name="subject[]" id="ICST104" value="ICST104">
-    <input type="submit" />
-</form>
-
-<?php
-if(!empty($_POST['subject'])) {
-    foreach($_POST['subject'] as $check) {
-            echo $check; //echoes the value set in the HTML form for each checked checkbox.
-                         //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
-                         //in your case, it would echo whatever $row['Report ID'] is equivalent to.
-    }
-}
-?>
-
+                    <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                <p class="text-primary">Input Preferred Schedule</p>
                                 </div>
+            
+                                <div class="container-fluid">
+            <div class="row">
+            <div class="col col-4">
 
-                                <div class="col col-5">
+                              <div class="container-fluid ">
+
+                           <div class="add-module ">
+                               <br>
+                                <div style="text-align:center">  <h1>LOADING SCHEME</h1></div>
+                              <div class="half">
+                               
+                                
+                                <h1>Semester</h1>
+                                         <select class="custom-select"  id="semester" name="semester" onchange="populate(this.id,'units')">
+                                         <option></option>
+                                         <option>First Semester </option>
+                                         <option>Second Semester </option>
+                                         <option>Intercession </option>
                                     
-                                </div>
-                            </div>
-
-
-
-                            <h1>Day Scheme</h1>
-                            <select class="custom-select" name="day" id="day">
-                                <option value="">Select Day Scheme</option>
-                                <?php
-                                foreach ($day as $row) {
-                                    echo '<option value="' . $row->day_name . '">' . $row->day_name . '</option>';
-                                }
-                                ?>
-
-                            </select>
-
-
-
-                            <div class="half">
-                                <h1>Preferred Time Start</h1>
-                                <select class="custom-select" name="time_start" id="time_start">
-                                    <option value="">Select Time Start</option>
-                                    <?php
-                                    foreach ($time_start as $row) {
-                                        echo '<option value="' . $row->Time_Start_ID . '">' . $row->time_start_name . '</option>';
-                                    }
-                                    ?>
-
-                                </select>
-
-
-                            </div>
-
-                            <div class="half">
-                                <h1>Preferred Time End</h1>
-                                <select class="custom-select" name="time_end" id="time_end">
-                                    <option value="">Select Time End</option>
-                                    <?php
-                                
-                                    foreach ($time_end as $row) {
-                                        echo '<option value="' . $row->time_end_id . '">' . $row->time_end_name . '</option>';
-                                    }
-                                    ?>
-
-                                </select>
-
-                            </div>
-
-                            <h1>Loading Scheme</h1>
-                            <select class="custom-select" name="loading_scheme" id="loading_scheme">
-                                <option value="">Select loading scheme</option>
-                                <?php
-                                foreach ($loading_scheme as $row) {
-                                    echo '<option value="' . $row->loading_id . '">' . $row->loading_name . '</option>';
-                                }
-                                ?>
-
-                            </select>
-                                
-
-                            </ul>
-                            <form>
-                                <input type="button" type="submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
-
-                                <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title dark" id="exampleModalLongTitle">Successfuly Created</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body" style="text-align:center">
-                                                <p>Schedule Sucessfully Created</p>
-                                                <p><b></b></p>
-                                                <p></p>
-
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
+                                    </select>
                                     </div>
-<<<<<<< HEAD
+                                    <div class="half">
+                                        <h1>Units</h1>
+                                        <select class="custom-select" id ="units" name="units">
+                                      
+                                    
+                                     
+                                    </select>
+                                    </div>
                                     <div  style="text-align:center">
                                             <br>
                                             <button id ="add_semester" class="btn btn-primary btn-xs mb-3"> Add Semester </button>
@@ -271,7 +192,7 @@ if(!empty($_POST['subject'])) {
                                             <?php
                                             foreach($subject_list as $row)
                                             {
-                                            echo '<option value="'.$row->advisement_id.'">'.$row->subject_code.'</option>';
+                                            echo '<option value="'.$row->id.'">'.$row->subject_code.'</option>';
                                             }
                                             ?>
                                         </select>
@@ -283,56 +204,70 @@ if(!empty($_POST['subject'])) {
            
                                           </div>
     
-=======
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
-
                 
-                <div class="main-content-inner">
-                    <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                <p class="text-primary">Subject Offering for 2nd Semester 2020-2021</p>
-                        </div>
-                        <div class="row">
-                                <div class="col-12">
-                                <div class="col-md-12">
-                                    <table class="table table-striped" id="mydata">
+                              </div> 
+                              </div>            
+                              
+                               
+            </div>
+            <div class="col col-8">
+           
+            <div class="row">
+            <div class="container-fluid">
+            <table class="table table-striped" id="mydata">
+         
                                         <thead>
                                             <tr style="text-align:center">
                      
-                                                <th>SUBJECT CODE</th>
-                                                <th>SUBJECT NAME</th>
+                                                <th>Semester</th>
+                                                <th>Units</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="show_data" style="text-align:center">
-
+                                        <tbody style="text-align:center">
+                                            <td> </td>
+                                            <td> </td>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                            </div>
-                        </div>
-                </div>
-  
-
-
-
-
-
-
-                </div>
             </div>
-        </div>
-    </div>
+</div>
+    <br><br><br>
+<div class="row">
+            <div class="container-fluid">
+            <table class="table table-striped" id="mydata2">
+                                        <thead>
+                                            <tr style="text-align:center">
+                     
+                                                <th>Subject Code</th>
+                                                <th>Subject Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align:center">
+                                            <td> </td>
+                                            <td> </td>
+                                        </tbody>
+                                    </table>
+            </div>
+</div>
+<div  style="text-align:center">
+                                            <br>
+                                            <button id ="add_semester" class="btn btn-primary btn-xs mb-3"> Send </button>
+                                      
+                                              </div>
 
+
+
+    
+         
+
+            
+            
+                       
+
+               <!-- offset area end -->
+    <!-- jquery latest version -->
+  
     <script src="<?php echo base_url(); ?>assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/timetable.js"></script> 
     <!-- bootstrap 4 js -->
     <script src="<?php echo base_url(); ?>assets/js/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
@@ -341,93 +276,32 @@ if(!empty($_POST['subject'])) {
     <script src="<?php echo base_url(); ?>assets/js/jquery.slimscroll.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/jquery.slicknav.min.js"></script>
 
-    <!-- Start datatable js -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
-
     <!-- others plugins -->
     <script src="<?php echo base_url(); ?>assets/js/plugins.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
-
-
-    <script>
-        $('#btn_submit').on('click', function() {
-            var faculty_id = $('#faculty').val();
-            var day = $('#day').val();
-            var subject_id = $('#advisement').val();
-            //var schedule_id = $('#schedule_id').val();
-            var loading_id = $('#loading_scheme').val();
-            var time_start = $('#time_start').val();
-            var time_end = $('#time_end').val();
-            $.ajax({
-                type: "POST",
-                url: "<?php echo site_url('pages/insert_subject_offering') ?>",
-                dataType: "JSON",
-                data: {
-                    faculty_id: faculty_id,
-                    day: day,
-                    subject_id: subject_id,
-                    loading_id: loading_id,
-                    time_start: time_start,
-                    time_end: time_end
-                },
-                success: function(data) {
- 
-                    $('[name="faculty_id"]').val("");
-                    $('[name="day"]').val("");
-                    $('[name="subject_id"]').val("");
-                    $('[name="schedule_id"]').val("");
-                    $('[name="loading_id"]').val("");
-                    $('[name="time_start"]').val("");
-                    $('[name="time_end"]').val("");
-                    $('#Modal_Add').modal('hide');
-                    $('#exampleModalCenter').modal('show');
-                }
-
-            });
-
-            return false;
-        });
-    </script>
+    <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>      
 
     <script>
-        $(document).ready(function() {
-            $('#select').css('color', 'blue');
-            $('#select').change(function() {
-                var current = $('#select').val();
-                if (current != 'null') {
-                    $('#select').css('color', 'red');
-                } else {
-                    $('#select').css('color', 'blue');
-                }
-            });
-        });
-    </script>
-    <script>
-        (function() {
-            $('ul.day-picker li').on('click', function() {
-                $(this).toggleClass('day-selected');
-            });
+  jQuery(function($) {
+    var units = {
+        'First Semester': ['18 units', '19 units', '20 units','21 units','22 units','23 units', '24 units', '25 units', '26 units'],
+        'Second Semester': ['18 units', '19 units', '20 units','21 units','22 units','23 units', '24 units', '25 units', '26 units'],
+        'Intercession': ['3 units', '6 units', '9 units'],
+    }
+    
+    var $units = $('#units');
+    $('#semester').change(function () {
+        var semester = $(this).val(), unts = units[semester] || [];
+        
+        var html = $.map(unts, function(utn){
+            return '<option value="' + utn + '">' + utn + '</option>'
+        }).join('');
+        $units.html(html)
+    });
+});
 
-            $('ul.color-picker li').on('click', function() {
-                $('.color-selected').removeClass('color-selected');
-                $(this).addClass('color-selected');
-            });
-        }(jQuery));
-    </script>
+      
+$(document).ready(function(){
 
-    <script>
-        $(function() {
-            $('#subject').on('change', function() {
-                    $('#lab_1').prop('disabled', this.value != 'Computer Programming I');
-                    $('#lab_2').prop('disabled', this.value != 'Computer Programming I');
-                    $('#lab_3').prop('disabled', this.value != 'Computer Programming I');
-
-<<<<<<< HEAD
-=======
     $('#add_semester').click(function()
     {
        var semester = $('#semester').val();
@@ -440,6 +314,9 @@ if(!empty($_POST['subject'])) {
            '</tr>'
        ); 
     });
+
+
+
 
     $('#subject_code').change(function(){
   var subject_code = $('#subject_code').val();
@@ -462,59 +339,63 @@ if(!empty($_POST['subject'])) {
  });
 
 
+ /*
+        $('#add_subject').on('click', function() {
+            var subject_code = $('#subject_code').val();
+            var subject_name = $('#subject_name').val();
+
+                type: "POST",
+                url: "<?php echo site_url('pages/fetchSubject') ?>",
+                dataType: "JSON",
+                data: {
+                    subject_code: subject_code,
+                    subject_name: subject_name,
+                },
+                success: function(data) {
+                    $('[name="subject_code"]').val("");
+                    $('[name="subject_name"]').val("");
+                }
+
+            });
+
+            return false;
+        });
+    */
+
  $('#add_subject').click(function()
     {
        var subject_code = $('#subject_code').val();
-       //var subject_name = $('#subject_name').val();
+       var subject_name = $('#subject_name').val();
 
        $.ajax({
     url:"<?php echo base_url(); ?>pages/fetchSubject",
     method:"POST",
-    data:{subject_code:subject_code},
+    dataType: "JSON",
+    data: {
+        subject_code:subject_code,
+        subject_name:subject_name
+    },
     success:function(data)
     {
      $('#subject_code').html(data);
+     $('#subject_name').html(data);
+     //$('[name="subject_code"]').val("");
+     //$('[name="subject_name"]').val("");
     }
    });
     
        $('#mydata2 tbody:last-child').append(
+           '<tr>'+
            '<td>'+ subject_code + '</td>' +
            '<td>'+ subject_name + '</td>'+
            '</tr>'
        ); 
+
     });
-    
->>>>>>> 18d626e9c2e269f383ca6c1c19ef5b0e5087e913
-
-                })
-                .change();
-        }(jQuery));
-    </script>
+   
 
 
-    <script>
-        $(document).ready(function() {
 
-            $("#subject").filter(function() {
-                return $(this).val() == $("#subject_name").val();
-            }).attr('selected', true);
-
-            $("#subject").on("change", function() {
-
-                $("#subject_name").val($(this).find("option:selected").attr("value"));
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $("#advisement").on("change", function() {
-                $("#subject_name").val($("option:selected", this).attr('subject_name'));
-            });
-        });
-    </script>
-      <script>
-$(document).ready(function(){
    load_data();
         $('#mydata').dataTable();
 
@@ -546,17 +427,34 @@ $(document).ready(function(){
 
 
 
-
-
-
 });
 </script>
+    
+<script>
+        $(document).ready(function() {
+
+            $("#subject").filter(function() {
+                return $(this).val() == $("#subject_name").val();
+            }).attr('selected', true);
+
+            $("#subject").on("change", function() {
+
+                $("#subject_name").val($(this).find("option:selected").attr("value"));
+            });
+        });
+    </script>
+
+<script>
+        $(document).ready(function() {
+            $("#advisement").on("change", function() {
+                $("#subject_name").val($("option:selected", this).attr('subject_name'));
+            });
+        });
+    </script>
+
     
 
     </body>
 
 </html>
 
-
-
-            

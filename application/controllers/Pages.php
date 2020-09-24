@@ -30,6 +30,8 @@ class Pages extends CI_Controller
 		}
 	}
 
+	
+
 	public function view_semester()
 	{
 		$data['setting'] = $this->page_model->view_semester();
@@ -244,6 +246,12 @@ class Pages extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function add_subject()
+	{
+		$data = $this->page_model->add_subjectdata();
+		echo json_encode($data);
+	}
+
 	public function delete_subject()
 	{
 		$data = $this->page_model->delete_subjectdata();
@@ -260,6 +268,12 @@ class Pages extends CI_Controller
 	public function update_subject()
 	{
 		$data = $this->page_model->update_subjectdata();
+		echo json_encode($data);
+	}
+
+	public function update_subjectoffering()
+	{
+		$data = $this->page_model->update_subjectofferingdata();
 		echo json_encode($data);
 	}
 

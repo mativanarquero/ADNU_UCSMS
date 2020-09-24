@@ -28,7 +28,7 @@
                             <a href="javascript:void(0)" aria-expanded="true"><i class="ti-timer"></i><span>Manage Schedule</span></a>
                             <ul class="collapse">
                                 <li class="active"><a href="<?php echo base_url('') ?>">Add Schedule</a></li>
-                                <li><a href="<?php echo base_url('view_preferred_schedule') ?>">View Preferred Schedule</a></li>
+                                
 
 
 
@@ -46,9 +46,14 @@
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                             <ul class="collapse">
                                 <li><a href="<?php echo base_url('my_schedule.php') ?>">View Schedule</a></li>
+                                <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
+<<<<<<< HEAD
                        
+=======
+                        
+>>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                         <li>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                 <span>Reports</span></a>
@@ -57,6 +62,7 @@
                                 <li><a href="table-layout.html">All Schedules</a></li>
                                 <li><a href="datatable.html">datatable</a></li>
                             </ul>
+                            <a href="<?php echo base_url('chairperson_setting')?>"><i class="ti-dashboard"></i><span>MyProfile</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -279,10 +285,16 @@
                                 <li class="gray"></li>
                                 
                             </ul>
+<<<<<<< HEAD
                             
                             
                                 <input type="button" type="button" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule Pop-upc" data-target="#exampleModalCenter"> </input>
                         
+=======
+                            <form>
+                                <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
+
+>>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -293,6 +305,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center">
+<<<<<<< HEAD
                                             <li><a href="<?php echo base_url('add_schedule')?>"> </a></li>
                                                 <p><b></b></p>
                                                 <p>Schedule Sucessfully Created</p>
@@ -303,6 +316,11 @@
                                                 <p></p>
                                                 <p></p>
                                                 <p></p>
+=======
+                                                <p>Schedule Sucessfully Created</p>
+                                                <p><b></b></p>
+                                                <p></p>
+>>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
 
                                             </div>
                                             <div class="modal-footer">
@@ -331,7 +349,8 @@
                                         <div class="card card-blue-dark">
                                             <h3> <i class="fa fa-user"></i> </h3>
                                             <h6><?php echo $teacher['faculty_name'] ?></h6>
-                                            <div class="pad-top"><a href="view_schedule.php">View Schedule <i class="fa fa-chevron-right"></i></a></div>
+                                            <div class="pad-top"><a href="<?php echo base_url('all_Schedules')?>">View Schedule <i class="fa fa-chevron-right"></i></a></div>
+                                            
                                         </div>
 
                                 <?php }
@@ -400,15 +419,19 @@
                     time_end: time_end
                 },
                 success: function(data) {
+ 
                     $('[name="faculty_id"]').val("");
                     $('[name="day"]').val("");
                     $('[name="subject_id"]').val("");
-                    $('[name="schedule_id"]').val("");
+                    //$('[name="schedule_id"]').val("");
                     $('[name="room_id"]').val("");
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");
                     $('#Modal_Add').modal('hide');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                     $('#exampleModalCenter').modal('show');
                 }
 

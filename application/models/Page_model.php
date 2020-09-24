@@ -140,7 +140,7 @@ class Page_model extends CI_Model
     {
         $data = array(
             'faculty_id' => $this->input->post('faculty_id'),
-            'Day' => $this->input->post('day'),
+            'day' => $this->input->post('day'),
             'subject_id' => $this->input->post('subject_id'),
             'room_id' => $this->input->post('room_id'),
             'time_start' => $this->input->post('time_start'),
@@ -150,6 +150,7 @@ class Page_model extends CI_Model
         $result = $this->db->insert('subject_offering', $data);
         return $result;
     }
+
 
     public function insert_semesterdata()
     {
@@ -253,6 +254,27 @@ class Page_model extends CI_Model
         return $result;
     }
 
+    function update_subjectofferingdata()
+    {
+        $offering_id = $this->input->post('offering_id');
+        $subject_id = $this->input->post('subject_id');
+        $time_start = $this->input->post('time_start');
+        $time_end = $this->input->post('time_end');
+        $room_id = $this->input->post('room_id');
+        $day    = $this->input->post('day');
+        $faculty_id    = $this->input->post('faculty_id');
+
+        //$this->db->set('subject_id', $subject_id);
+        $this->db->set('time_start', $time_start);
+        $this->db->set('time_end', $time_end);
+        $this->db->set('room_id', $room_id);
+        $this->db->set('day', $day);
+        $this->db->set('subject_id', $subject_id);
+        $this->db->where('offering_id', $offering_id);
+        $result = $this->db->update('subject_offering');
+        return $result;
+    }
+
 
 
     function update_profiledata()
@@ -332,6 +354,7 @@ class Page_model extends CI_Model
         return $query->result();
     }
 
+    
     public function subject_list()
     {
         $department_id = $this->session->userdata('department_id');
@@ -341,6 +364,9 @@ class Page_model extends CI_Model
             ->get();
         return $query->result();
     }
+    
+
+    
 
     public function profile_list()
     {
