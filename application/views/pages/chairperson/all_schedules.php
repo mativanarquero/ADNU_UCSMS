@@ -354,7 +354,7 @@
     </button>
   </div>
   <div class="modal-body">
-        <div class="form-group row">
+  <div class="form-group row">
             <label class="col-md-6 col-form-label"><b>Subject Code</b></label>
             <label class="col-md-6 col-form-label"><b>Subject Name</b></label>
             <div class="col-md-6">
@@ -367,7 +367,7 @@
             
         </div>
         <div class="form-group row">
-            <label class="col-md-6 col-form-label"><b>Start Time</b></label>
+                  <label class="col-md-6 col-form-label"><b>Start Time</b></label>
             <label class="col-md-6 col-form-label"><b>End Time</b></label>
             <div class="col-md-6">
             <select name="time_start_edit" id="time_start_edit" class="form-control">
@@ -432,6 +432,8 @@
             <select name="faculty_id_edit" id="faculty_id_edit" class="form-control">
             <option value="2">John G. Sixto</option>
             <option value="3">Marianne P. Ang</option>
+            <option value="68">Jelly P. Aureus</option>
+            <option value="79">Mat Ivan Arquero</option>
             </select>
             </div>
                                      
@@ -560,11 +562,11 @@ $(document).ready(function(){
             return false;
         });
 
-        $('#show_data').on('click','.item_delete',function(){
+        $('#show_data').on('click','.item_edit',function(){
             var offering_id = $(this).data('offering_id');
             
-            $('#Modal_Delete').modal('show');
-            $('[name="offering_id_delete"]').val(offering_id);
+            //$('#Modal_Edit').modal('show');
+            //$('[name="offering_id_delete"]').val(offering_id);
         });
 
         $('#show_data').on('click','.item_edit',function(){
@@ -601,9 +603,9 @@ $(document).ready(function(){
                 type : "POST",
                 url  : "<?php echo site_url('pages/update_subjectoffering')?>",
                 dataType : "JSON",
-                data : {offering_id:offering_id, subject_id:subject_id,  time_start:time_start,  time_end:time_end,  room_id:room_id, day:day, faculty_id:faculty_id},
+                data : {subject_id:subject_id,  time_start:time_start,  time_end:time_end,  room_id:room_id, day:day, faculty_id:faculty_id},
                 success: function(data){
-                    $('[name="offering_id_edit"]').val("");
+                $('[name="offering_id_edit"]').val("");
                    $('[name="subject_id_edit"]').val("");
                    $('[name="time_start_edit"]').val("");
                    $('[name="time_end_edit"]').val("");

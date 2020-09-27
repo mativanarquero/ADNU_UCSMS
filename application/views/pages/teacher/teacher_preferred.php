@@ -254,42 +254,11 @@ if(!empty($_POST['subject'])) {
                                             </div>
                                         </div>
                                     </div>
-<<<<<<< HEAD
-                                    <div  style="text-align:center">
-                                            <br>
-                                            <button id ="add_semester" class="btn btn-primary btn-xs mb-3"> Add Semester </button>
-                                      
-                                              </div>
-                                              <br>
-
-                    
-
-                                              
-                                    <h1>Course Code</h1>
-                                    <select class="custom-select" id="advisement" name="advisement">
-                                            <option selected="selected" value="">Please Select...</option>
-                                            <?php
-                                            foreach($subject_list as $row)
-                                            {
-                                            echo '<option value="'.$row->advisement_id.'">'.$row->subject_code.'</option>';
-                                            }
-                                            ?>
-                                        </select>
-                                        <h1>Course Title</h1>
-                                        <input type="text" id="subject_name" name="subject_name" value="" readonly="readonly">
-                                <div style="text-align:right">
-                                        <br>
-                                        <button id ="add_subject" class="btn btn-primary btn-xs mb-3"> Add Subject </button>
-           
-                                          </div>
-    
-=======
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
 
                 
                 <div class="main-content-inner">

@@ -62,15 +62,15 @@ class Pages extends CI_Controller
 
 	public function fetch_time_start()
 	{
-		if ($this->input->post('day_id')) {
-			echo $this->page_model->fetch_time_start($this->input->post('day_id'));
+		if ($this->input->post('time_start_id')) {
+			echo $this->page_model->fetch_time_start($this->input->post('time_start_id'));
 		}
 	}
 
 	public function fetch_time_end()
 	{
-		if ($this->input->post('time_id')) {
-			echo $this->page_model->fetch_time_end($this->input->post('time_id'));
+		if ($this->input->post('time_end_id')) {
+			echo $this->page_model->fetch_time_end($this->input->post('time_end_id'));
 		}
 	}
 

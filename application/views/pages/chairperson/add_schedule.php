@@ -49,11 +49,7 @@
                                 <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
-<<<<<<< HEAD
-                       
-=======
                         
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                         <li>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                 <span>Reports</span></a>
@@ -195,7 +191,7 @@
                                 </div>
 
                                 <div class="col col-5">
-                                    <h1>No. of Section</h1>
+                                    <h1>Sugg. Sections</h1>
                                     <input class="text-center" type="text" id="no_section" name="no_section" value="2" readonly="readonly">
                                 </div>
                             </div>
@@ -285,16 +281,9 @@
                                 <li class="gray"></li>
                                 
                             </ul>
-<<<<<<< HEAD
-                            
-                            
-                                <input type="button" type="button" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule Pop-upc" data-target="#exampleModalCenter"> </input>
-                        
-=======
                             <form>
                                 <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
 
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -305,22 +294,9 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center">
-<<<<<<< HEAD
-                                            <li><a href="<?php echo base_url('add_schedule')?>"> </a></li>
-                                                <p><b></b></p>
-                                                <p>Schedule Sucessfully Created</p>
-                                                <p></p>
-                                                <p></p>
-                                                <p><b></b></p>
-                                                <p></p>
-                                                <p></p>
-                                                <p></p>
-                                                <p></p>
-=======
                                                 <p>Schedule Sucessfully Created</p>
                                                 <p><b></b></p>
                                                 <p></p>
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
 
                                             </div>
                                             <div class="modal-footer">
@@ -428,10 +404,6 @@
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");
                     $('#Modal_Add').modal('hide');
-<<<<<<< HEAD
-
-=======
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                     $('#exampleModalCenter').modal('show');
                 }
 

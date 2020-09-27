@@ -53,21 +53,15 @@
                                 <li><a href="<?php echo base_url('all_schedules.php') ?>">View All Schedules</a></li>
                             </ul>
                         </li>
-<<<<<<< HEAD
-                        
-                              
-                               
-=======
 
                                 
->>>>>>> 59208649e5e2c08cd0022ca192f7bdbb8954878a
                                 <li>
                                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-clipboard"></i>
                                             <span>Reports</span></a>
                                         <ul class="collapse">
                                             <li><a href="report_my_schedule">My Schedule</a></li>
                                             <li><a href="report_all_schedules">All Schedules</a></li>
-                                            <li><a href="datatable.html">datatable</a></li>
+                                            <li><a href="datatable.html">Faculty Schedule Report</a></li>
                                         </ul>
                                         </li>
                                         <li>

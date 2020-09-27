@@ -257,20 +257,28 @@ class Page_model extends CI_Model
     function update_subjectofferingdata()
     {
         $offering_id = $this->input->post('offering_id');
-        $subject_id = $this->input->post('subject_id');
-        $time_start = $this->input->post('time_start');
-        $time_end = $this->input->post('time_end');
+        $faculty_id = $this->input->post('faculty_id');
+        //$subject_id = $this->input->post('subject_id');
+        $day = $this->input->post('day');
         $room_id = $this->input->post('room_id');
-        $day    = $this->input->post('day');
-        $faculty_id    = $this->input->post('faculty_id');
+        $time_start    = $this->input->post('time_start');
+        $time_end    = $this->input->post('time_end');
 
         //$this->db->set('subject_id', $subject_id);
+        //$this->db->set('offering_id', $offering_id);
+        $this->db->set('day', $day);
+        //$this->db->set('faculty_id', $faculty_id);
+        //$this->db->set('subject_id', $subject_id);
+        $this->db->set('room_id', $room_id);
         $this->db->set('time_start', $time_start);
         $this->db->set('time_end', $time_end);
-        $this->db->set('room_id', $room_id);
-        $this->db->set('day', $day);
-        $this->db->set('subject_id', $subject_id);
-        $this->db->where('offering_id', $offering_id);
+        //$this->db->where('faculty_id', $faculty_id);
+        //$this->db->where('offering_id', $offering_id);
+
+        $array = array('faculty_id' => $faculty_id, 'offering_id' => $offering_id);
+
+        $this->db->where($array); 
+
         $result = $this->db->update('subject_offering');
         return $result;
     }
