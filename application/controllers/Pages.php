@@ -16,6 +16,20 @@ class Pages extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function load_sixto_schedule()
+	{
+
+		$data = $this->page_model->sixto_subject_offering_list();
+		echo json_encode($data);
+	}
+
+	public function load_aureus_schedule()
+	{
+
+		$data = $this->page_model->aureus_subject_offering_list();
+		echo json_encode($data);
+	}
+
 	public function load_all_schedules()
 	{
 
@@ -221,21 +235,60 @@ class Pages extends CI_Controller
 
 	public function insert_subject_offering()
 	{
-		/*$this->form_validation->set_rules('room', 'time_start', 'time_end');
-		$this->form_validation->set_rules('faculty', 'faculty', 'required');
+		$this->form_validation->set_rules('faculty_id', 'faculty_id', 'required');
+		$this->form_validation->set_rules('day', 'day', 'required');
+		//$this->form_validation->set_rules('time_start', 'time_start', 'required');
+		//$this->form_validation->set_rules('time_end', 'time_end',  'required');
+		//$this->form_valiation->set_rules('time_end', 'time_end', 'greater_than['.$this->input->post('time_start').']');
+		//$this->form_validation->set_rules('time_end', 'time_end', 'less_than [time_start]');
+		$this->form_validation->set_rules('subject_id', 'subject_id', 'required');
+		//$this->form_validation->set_rules('time_end_id', 'time_end_id', 'less_than['.$this->input->post('time_start_id').']');
+		//'greater_than['.$this->input->post('field_one').']'
 
+		$this->form_validation->set_rules('time_start', 'time_start', 'required');
+		$this->form_validation->set_rules('time_end', 'time_end', 'required|greater_than_equal_to['.$this->input->post('time_start').']');
+		//$this->form_validation->set_rules('pay', '', 'required| greater_than[0]');
+		//$this->form_validation->set_rules('time_end', 'time_end', 'required|callback_check_equal_less['.$this->input->post('time_start').']');
+		/*
+		function check_equal_less($time_end, $time_start)
+		{
+			if ($time_end <= $time_start) {
+				$this->form_validation->set_message('check_equal_less', 'The time start &amp;/or time end have errors.');
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		*/
 
 		if ($this->form_validation->run() === FALSE) {
+			$this->form_validation->set_error_delimiters('<span class="text-danger">','</span>');
+			//echo '<script> alert("'.str_replace(array("\r","\n"), '\n', validation_errors()).'"); </script>';
+			$this->load->view('pages/add_schedule');
+			
+		} 
+		else {
+			$data = $this->page_model->insert_subject_offeringdata();
+			echo json_encode($data);
+		}
 
-			$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
-			$this->load->view('pages/addSchedule');
-		} else {
-		*/
-		$this->form_validation->set_rules('Day', 'Day', 'required');
-		//$this->form_validation->set_rules('password', 'password', 'required');
+
+				
+			
+	
+	}
+
+	
+
+	public function insert_teacher_preferred()
+	{
+	
+		//$this->form_validation->set_rules('Day', 'Day', 'required');
+		
 
 
-		$data = $this->page_model->insert_subject_offeringdata();
+		$data = $this->page_model->insert_teacher_preferreddata();
 		echo json_encode($data);
 	}
 
@@ -346,6 +399,7 @@ class Pages extends CI_Controller
 
 		$this->form_validation->set_rules('email_address', 'email', 'required|valid_email');
 		$this->form_validation->set_rules('password', 'password', 'required');
+		//$this->form_validation->set_rules('passconf', 'Password Confirmation', 'required|matches[password]');
 
 
 		if ($this->form_validation->run() === FALSE) {

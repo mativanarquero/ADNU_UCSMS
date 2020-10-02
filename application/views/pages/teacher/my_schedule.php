@@ -18,13 +18,7 @@
                             <li >
                                     <a href="<?php echo base_url('teacher_dashboard');?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                                 </li>          
-                                <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Preferred Schedule</span></a>
-                                    <ul class="collapse">
-                                        <li><a href="<?php echo base_url('teacher_preferred')?>">Add Preferred Schedule</a></li>
-                                        <li><a href="<?php echo base_url('view_preferred')?>">View Preferred Schedule</a></li>
-                                    </ul>
-                                </li>
+                                
                                 <li class="active">
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                                     <ul class="collapse">

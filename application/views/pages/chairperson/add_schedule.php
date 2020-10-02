@@ -191,8 +191,7 @@
                                 </div>
 
                                 <div class="col col-5">
-                                    <h1>Sugg. Sections</h1>
-                                    <input class="text-center" type="text" id="no_section" name="no_section" value="2" readonly="readonly">
+                                    
                                 </div>
                             </div>
 
@@ -270,16 +269,9 @@
                             </select>
 
 
-                            <h1>Legend</h1>
-                            <ul class="color-picker">
-                                <li class="blue"></li>
-                                <li class="red color-selected"></li>
-                                <li class="yellow"></li>
-                                <li class="purple"></li>
-                                <li class="green"></li>
-                                <li class="orange"></li>
-                                <li class="gray"></li>
+                            </br> </br>
                                 
+
                             </ul>
                             <form>
                                 <input type="button" type="submit" id="btn_create" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
@@ -305,7 +297,7 @@
                                         </div>
                                     </div>
                                 </div>
-                           
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -325,7 +317,8 @@
                                         <div class="card card-blue-dark">
                                             <h3> <i class="fa fa-user"></i> </h3>
                                             <h6><?php echo $teacher['faculty_name'] ?></h6>
-                                            <div class="pad-top"><a href="<?php echo base_url('all_Schedules')?>">View Schedule <i class="fa fa-chevron-right"></i></a></div>
+                                            
+                                            <div class="pad-top"><a href="<?php echo base_url('all_schedules')?>">View Schedule <i class="fa fa-chevron-right"></i></a></div>
                                             
                                         </div>
 
@@ -382,6 +375,7 @@
             var room_id = $('#room').val();
             var time_start = $('#time_start').val();
             var time_end = $('#time_end').val();
+            //var class_code = $('#class_code').val();
             $.ajax({
                 type: "POST",
                 url: "<?php echo site_url('pages/insert_subject_offering') ?>",
@@ -392,7 +386,8 @@
                     subject_id: subject_id,
                     room_id: room_id,
                     time_start: time_start,
-                    time_end: time_end
+                    time_end: time_end,
+                    ///class_code:class_code,
                 },
                 success: function(data) {
  
@@ -403,10 +398,11 @@
                     $('[name="room_id"]').val("");
                     $('[name="time_start"]').val("");
                     $('[name="time_end"]').val("");
+                    //$('[name="class_code"]').val("");
                     $('#Modal_Add').modal('hide');
                     $('#exampleModalCenter').modal('show');
                 }
-
+                
                 
             });
 
@@ -472,6 +468,14 @@
         $(document).ready(function() {
             $("#advisement").on("change", function() {
                 $("#subject_name").val($("option:selected", this).attr('subject_name'));
+            });
+        });
+    </script>
+
+<script>
+        $(document).ready(function() {
+            $("#advisement").on("change", function() {
+                $("#time_end_id" > "time_start_id").val($("option:selected", this).attr('time_end_id'));
             });
         });
     </script>

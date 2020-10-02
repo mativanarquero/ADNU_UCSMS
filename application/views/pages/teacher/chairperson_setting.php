@@ -21,22 +21,16 @@
                     <div class="menu-inner">
                         <nav>
                             <ul class="metismenu" id="menu">
-                                <li class="active">
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
-                                </li>          
                                 <li>
-                                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i><span>Preferred Schedule</span></a>
-                                    <ul class="collapse">
-                                        <li><a href="<?php echo base_url('teacher_preferred')?>">Add Preferred Schedule</a></li>
-                                        <li><a href="<?php echo base_url('view_preferred')?>">View Preferred Schedule</a></li>
-                                    </ul>
-                                </li>
+                                <a href="<?php echo base_url('teacher_dashboard');?>" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                </li>          
+                                
                                 <li>
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                                     <ul class="collapse">
-                                            <li><a href="<?php echo base_url('view_preferred')?>">View Schedule</a></li>
+                                            <li><a href="<?php echo base_url('my_schedule')?>">View Schedule</a></li>
                                     </ul>
-                                    <li><a href="<?php echo base_url('chairperson_setting')?>">My Profile</a></li>
+                                    <li class="active"><a href="<?php echo base_url('chairperson_setting')?>">My Profile</a></li>
                                 </li>
 
                             </ul>
@@ -66,57 +60,16 @@
                                     <span>2</span>
                                 </i>
                                 <div class="dropdown-menu bell-notify-box notify-box">
-                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <span class="notify-title">You have a teaching schedule <a href="my_schedule">view all</a></span>
                                     <div class="nofity-list">
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                             <div class="notify-text">
-                                                <p>You have Changed Your Password</p>
+                                                <p>You have a teaching schedule</p>
                                                 <span>Just Now</span>
                                             </div>
                                         </a>
-                                        <a href="#" class="notify-item">
-                                            <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                                            <div class="notify-text">
-                                                <p>New Commetns On Post</p>
-                                                <span>30 Seconds ago</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="notify-item">
-                                            <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                                            <div class="notify-text">
-                                                <p>Some special like you</p>
-                                                <span>Just Now</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="notify-item">
-                                            <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                                            <div class="notify-text">
-                                                <p>New Commetns On Post</p>
-                                                <span>30 Seconds ago</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="notify-item">
-                                            <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                                            <div class="notify-text">
-                                                <p>Some special like you</p>
-                                                <span>Just Now</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="notify-item">
-                                            <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                                            <div class="notify-text">
-                                                <p>You have Changed Your Password</p>
-                                                <span>Just Now</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="notify-item">
-                                            <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                                            <div class="notify-text">
-                                                <p>You have Changed Your Password</p>
-                                                <span>Just Now</span>
-                                            </div>
-                                        </a>
+                                        
                                     </div>
                                 </div>
                             </li>

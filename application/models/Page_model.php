@@ -145,9 +145,26 @@ class Page_model extends CI_Model
             'room_id' => $this->input->post('room_id'),
             'time_start' => $this->input->post('time_start'),
             'time_end' => $this->input->post('time_end'),
+            //'class_code' => $this->input->post('class_code'),
         );
 
         $result = $this->db->insert('subject_offering', $data);
+        return $result;
+    }
+
+    public function insert_teacher_preferreddata()  
+    {
+        $data = array(
+            'loading_id' => $this->input->post('loading_id'),
+            'day' => $this->input->post('day'),
+            
+            'time_start' => $this->input->post('time_start'),
+            'time_end' => $this->input->post('time_end'),
+            'faculty_id' => $this->input->post($this->session->userdata('faculty_id')),
+            //'class_code' => $this->input->post('class_code'),
+        );
+
+        $result = $this->db->insert('teacher_preferred', $data);
         return $result;
     }
 
@@ -254,31 +271,39 @@ class Page_model extends CI_Model
         return $result;
     }
 
+    //static $tableid = 'offering_id';
     function update_subjectofferingdata()
     {
+        
+
         $offering_id = $this->input->post('offering_id');
         $faculty_id = $this->input->post('faculty_id');
-        //$subject_id = $this->input->post('subject_id');
         $day = $this->input->post('day');
         $room_id = $this->input->post('room_id');
         $time_start    = $this->input->post('time_start');
         $time_end    = $this->input->post('time_end');
-
-        //$this->db->set('subject_id', $subject_id);
+        //$class_code = $this->input->post('class_code');
+        //$subject_id = $this->input->post('subject_id');
+        
         //$this->db->set('offering_id', $offering_id);
         $this->db->set('day', $day);
-        //$this->db->set('faculty_id', $faculty_id);
-        //$this->db->set('subject_id', $subject_id);
+        //$this->db->set('faculty_id', $faculty_id); 
         $this->db->set('room_id', $room_id);
         $this->db->set('time_start', $time_start);
         $this->db->set('time_end', $time_end);
-        //$this->db->where('faculty_id', $faculty_id);
-        //$this->db->where('offering_id', $offering_id);
+        //$this->db->set('subject_id', $subject_id);
+        //$this->db->where('class_code' == $class_code);
+        
 
-        $array = array('faculty_id' => $faculty_id, 'offering_id' => $offering_id);
+        
+        
+        $this->db->where('faculty_id', $faculty_id);
 
-        $this->db->where($array); 
+        //$array = array('class_code' => $class_code);
 
+        //$this->db->where($array); 
+
+        
         $result = $this->db->update('subject_offering');
         return $result;
     }
@@ -417,6 +442,42 @@ class Page_model extends CI_Model
             ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
             ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
             ->where('faculty.faculty_id', $this->session->userdata('faculty_id'))
+            ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
+            ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
+            ->join('room', 'room.room_id=subject_offering.room_id', 'left')
+            
+            //->join('advisement', 'advisement.advisement_id=subject_offering.subject_id', 'left')
+            ->order_by('offering_id', 'ASC')
+            ->get();
+        return $query->result();
+
+    }
+
+    public function sixto_subject_offering_list()
+    {
+        $query = $this->db->select('*')
+            ->from('subject_offering')
+            ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
+            ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
+            ->where('faculty.faculty_id = 2')
+            ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
+            ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
+            ->join('room', 'room.room_id=subject_offering.room_id', 'left')
+            
+            //->join('advisement', 'advisement.advisement_id=subject_offering.subject_id', 'left')
+            ->order_by('offering_id', 'ASC')
+            ->get();
+        return $query->result();
+
+    }
+
+    public function aureus_subject_offering_list()
+    {
+        $query = $this->db->select('*')
+            ->from('subject_offering')
+            ->join('advisement', 'advisement.id=subject_offering.subject_id', 'left')
+            ->join('faculty', 'faculty.faculty_id=subject_offering.faculty_id', 'left')
+            ->where('faculty.faculty_id = 68')
             ->join('time_start', 'time_start.time_start_id=subject_offering.time_start', 'left')
             ->join('time_end', 'time_end.time_end_id=subject_offering.time_end', 'left')
             ->join('room', 'room.room_id=subject_offering.room_id', 'left')

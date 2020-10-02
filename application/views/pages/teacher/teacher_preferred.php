@@ -28,7 +28,7 @@
                                 <li>
                                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-calendar"></i><span>My Schedule</span></a>
                                     <ul class="collapse">
-                                            <li><a href="<?php echo base_url('view_preferred')?>">View Schedule</a></li>
+                                            <li><a href="<?php echo base_url('my_schedule')?>">View Schedule</a></li>
                                     </ul>
                                 </li>
 
@@ -126,45 +126,41 @@
                 </div>
             </div>
             <!-- header area end -->
-            <!-- page title area start -->
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Input Preferred Schedule</h4>
-                            <ul class="breadcrumbs pull-left">
-                                <li><a href="teacher_dashboard">Home</a></li>
-                                <li><span>Add Preferred Schedule</span></li>
-                            </ul>
-                        </div>
+             <!-- page title area start -->
+        <div class="page-title-area">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">Input Preferred Schedule</h4>
+                        <ul class="breadcrumbs pull-left">
+                            <li><a href="chairperson_dashboard.html">Home</a></li>
+                            <li><span>Preferred Schedule</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div><br><br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-4">
 
-
-            <div class="container-fluid ">
+                    <div class="container-fluid ">
                         <div class="add-module ">
                             <div class="row">
-                                <div class="col col-7">
-                                    <form action="test.php" method="post">
-    <input type="checkbox" name="subject[]" id="ICST101" value="ICST101">
-    <label for="ICST101">ICST101</label> 
-    <input type="checkbox" name="subject[]" id="ICST102" value="ICST102">
-    <label for="ICST101">ICST102</label>
-    <input type="checkbox" name="subject[]" id="CSDC101" value="CSDC101">
-    <input type="checkbox" name="subject[]" id="ICST103" value="ICST103">
-    <input type="checkbox" name="subject[]" id="ICST104" value="ICST104">
-    <input type="submit" />
-</form>
-
-<?php
-if(!empty($_POST['subject'])) {
-    foreach($_POST['subject'] as $check) {
-            echo $check; //echoes the value set in the HTML form for each checked checkbox.
-                         //so, if I were to check 1, 3, and 5 it would echo value 1, value 3, value 5.
-                         //in your case, it would echo whatever $row['Report ID'] is equivalent to.
-    }
-}
-?>
+                                <div class="col col-12">
+                                <div class="half">
+                                  <h1>Loading Scheme</h1>
+                                  <select class="custom-select" name="loading" id="loading">
+                                        <option selected="selected">Select Loading Scheme</option>          
+                                        <option value="1">3 Units</option>
+                                        <option value="3">6 Units</option>
+                                        <option value="5">9 Units</option>
+                                        <option value="7">12 Units</option>
+                                        <option value="9">15 Units</option>
+                                        <option value="11">18 Units</option>
+                                        <option value="1">24 Units</option>
+                                    </select> 
+                    </div>
 
                                 </div>
 
@@ -174,77 +170,79 @@ if(!empty($_POST['subject'])) {
                             </div>
 
 
+                            
 
-                            <h1>Day Scheme</h1>
+                            <h1>Preferred Day</h1>
                             <select class="custom-select" name="day" id="day">
-                                <option value="">Select Day Scheme</option>
-                                <?php
-                                foreach ($day as $row) {
-                                    echo '<option value="' . $row->day_name . '">' . $row->day_name . '</option>';
-                                }
-                                ?>
-
-                            </select>
-
-
-
-                            <div class="half">
-                                <h1>Preferred Time Start</h1>
-                                <select class="custom-select" name="time_start" id="time_start">
-                                    <option value="">Select Time Start</option>
-                                    <?php
-                                    foreach ($time_start as $row) {
-                                        echo '<option value="' . $row->Time_Start_ID . '">' . $row->time_start_name . '</option>';
-                                    }
-                                    ?>
-
-                                </select>
-
-
-                            </div>
-
-                            <div class="half">
-                                <h1>Preferred Time End</h1>
-                                <select class="custom-select" name="time_end" id="time_end">
-                                    <option value="">Select Time End</option>
-                                    <?php
+                                <option value="1">Mon, Wed, Fri</option>
+                                <option value="2">Tue, Thurs</option>
+                                <option value="5">Saturdays</option>
                                 
-                                    foreach ($time_end as $row) {
-                                        echo '<option value="' . $row->time_end_id . '">' . $row->time_end_name . '</option>';
-                                    }
-                                    ?>
-
-                                </select>
-
-                            </div>
-
-                            <h1>Loading Scheme</h1>
-                            <select class="custom-select" name="loading_scheme" id="loading_scheme">
-                                <option value="">Select loading scheme</option>
-                                <?php
-                                foreach ($loading_scheme as $row) {
-                                    echo '<option value="' . $row->loading_id . '">' . $row->loading_name . '</option>';
-                                }
-                                ?>
+                                
 
                             </select>
+
+
+
+                            <div class="half">
+                                  <h1>Start Time</h1>
+                                  <select class="custom-select" name="time_start" id="time_start">
+                                        <option selected="selected">Select Time Start</option>          
+                                        <option value="1">7:30</option>
+                                        <option value="2">8:00</option>
+                                        <option value="3">8:30</option>
+                                        <option value="4">9:00</option>
+                                        <option value="5">9:30</option>
+                                        <option value="6">10:00</option>
+                                        <option value="7">10:30</option>
+                                        <option value="8">11:00</option>
+                                        <option value="9">11:30</option>
+                                        <option value="10">12:00</option>
+                                    </select> 
+
+
+                                </div>  
+
+                                <div class="half">
+                                  <h1>Start End</h1>
+                                  <select class="custom-select" name="time_end" id="time_end">
+                                        <option selected="selected">Select Time End</option>          
+                                        <option value="1">8:30</option>
+                                        <option value="2">9:00</option>
+                                        <option value="3">9:30</option>
+                                        <option value="4">10:00</option>
+                                        <option value="5">10:30</option>
+                                        <option value="6">11:00</option>
+                                        <option value="7">11:30</option>
+                                        <option value="8">12:00</option>
+                                    </select> 
+                               
+
+                            </div>
+                            <div>
+                            </div>
+                            
+
+                            
+
+                            </br> </br>
                                 
 
                             </ul>
                             <form>
-                                <input type="button" type="submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" value="Create Schedule"> </input>
+                                <input type="button" type="submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" value="Submit Preferred Schedule"> </input>
 
                                 <div class="modal fade color-blue" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title dark" id="exampleModalLongTitle">Successfuly Created</h5>
+                                                <h5 class="modal-title dark" id="exampleModalLongTitle">Successfuly Submitted</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center">
-                                                <p>Schedule Sucessfully Created</p>
+                                                <p>Preferred Schedule Submitted</p>
                                                 <p><b></b></p>
                                                 <p></p>
 
@@ -259,10 +257,15 @@ if(!empty($_POST['subject'])) {
                         </div>
                     </div>
                 </div>
+                <div class="col col-8">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Teacher View</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
 
-                
-                <div class="main-content-inner">
-                    <div class="card">
+                        <div class="card">
                             <div class="card-body">
                                 <div class="row">
                                 <p class="text-primary">Subject Offering for 2nd Semester 2020-2021</p>
@@ -276,6 +279,8 @@ if(!empty($_POST['subject'])) {
                      
                                                 <th>SUBJECT CODE</th>
                                                 <th>SUBJECT NAME</th>
+                                                <th>ADVISEMENT COUNT</th>
+                                                <th>SECTIONS</th>
                                             </tr>
                                         </thead>
                                         <tbody id="show_data" style="text-align:center">
@@ -290,6 +295,14 @@ if(!empty($_POST['subject'])) {
                         </div>
                 </div>
   
+
+
+
+
+
+
+                        </div>
+                    </div>
 
 
 
@@ -321,168 +334,7 @@ if(!empty($_POST['subject'])) {
     <script src="<?php echo base_url(); ?>assets/js/plugins.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
 
-
     <script>
-        $('#btn_submit').on('click', function() {
-            var faculty_id = $('#faculty').val();
-            var day = $('#day').val();
-            var subject_id = $('#advisement').val();
-            //var schedule_id = $('#schedule_id').val();
-            var loading_id = $('#loading_scheme').val();
-            var time_start = $('#time_start').val();
-            var time_end = $('#time_end').val();
-            $.ajax({
-                type: "POST",
-                url: "<?php echo site_url('pages/insert_subject_offering') ?>",
-                dataType: "JSON",
-                data: {
-                    faculty_id: faculty_id,
-                    day: day,
-                    subject_id: subject_id,
-                    loading_id: loading_id,
-                    time_start: time_start,
-                    time_end: time_end
-                },
-                success: function(data) {
- 
-                    $('[name="faculty_id"]').val("");
-                    $('[name="day"]').val("");
-                    $('[name="subject_id"]').val("");
-                    $('[name="schedule_id"]').val("");
-                    $('[name="loading_id"]').val("");
-                    $('[name="time_start"]').val("");
-                    $('[name="time_end"]').val("");
-                    $('#Modal_Add').modal('hide');
-                    $('#exampleModalCenter').modal('show');
-                }
-
-            });
-
-            return false;
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $('#select').css('color', 'blue');
-            $('#select').change(function() {
-                var current = $('#select').val();
-                if (current != 'null') {
-                    $('#select').css('color', 'red');
-                } else {
-                    $('#select').css('color', 'blue');
-                }
-            });
-        });
-    </script>
-    <script>
-        (function() {
-            $('ul.day-picker li').on('click', function() {
-                $(this).toggleClass('day-selected');
-            });
-
-            $('ul.color-picker li').on('click', function() {
-                $('.color-selected').removeClass('color-selected');
-                $(this).addClass('color-selected');
-            });
-        }(jQuery));
-    </script>
-
-    <script>
-        $(function() {
-            $('#subject').on('change', function() {
-                    $('#lab_1').prop('disabled', this.value != 'Computer Programming I');
-                    $('#lab_2').prop('disabled', this.value != 'Computer Programming I');
-                    $('#lab_3').prop('disabled', this.value != 'Computer Programming I');
-
-<<<<<<< HEAD
-=======
-    $('#add_semester').click(function()
-    {
-       var semester = $('#semester').val();
-       var units = $('#units').val();
-
-       $('#mydata tbody:last-child').append(
-           '<tr>'+
-           '<td>'+ semester + '</td>' +
-           '<td>'+ units + '</td>'+
-           '</tr>'
-       ); 
-    });
-
-    $('#subject_code').change(function(){
-  var subject_code = $('#subject_code').val();
-  if(subject_code != '')
-  {
-   $.ajax({
-    url:"<?php echo base_url(); ?>pages/fetchSubjectName",
-    method:"POST",
-    data:{subject_code:subject_code},
-    success:function(data)
-    {
-     $('#subject_name').html(data);
-    }
-   });
-  }
-  else
-  {
-   $('#subject_name').html('<option value="">Select Subject Name</option>');
-  }
- });
-
-
- $('#add_subject').click(function()
-    {
-       var subject_code = $('#subject_code').val();
-       //var subject_name = $('#subject_name').val();
-
-       $.ajax({
-    url:"<?php echo base_url(); ?>pages/fetchSubject",
-    method:"POST",
-    data:{subject_code:subject_code},
-    success:function(data)
-    {
-     $('#subject_code').html(data);
-    }
-   });
-    
-       $('#mydata2 tbody:last-child').append(
-           '<td>'+ subject_code + '</td>' +
-           '<td>'+ subject_name + '</td>'+
-           '</tr>'
-       ); 
-    });
-    
->>>>>>> 18d626e9c2e269f383ca6c1c19ef5b0e5087e913
-
-                })
-                .change();
-        }(jQuery));
-    </script>
-
-
-    <script>
-        $(document).ready(function() {
-
-            $("#subject").filter(function() {
-                return $(this).val() == $("#subject_name").val();
-            }).attr('selected', true);
-
-            $("#subject").on("change", function() {
-
-                $("#subject_name").val($(this).find("option:selected").attr("value"));
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $("#advisement").on("change", function() {
-                $("#subject_name").val($("option:selected", this).attr('subject_name'));
-            });
-        });
-    </script>
-      <script>
 $(document).ready(function(){
    load_data();
         $('#mydata').dataTable();
@@ -502,6 +354,8 @@ $(document).ready(function(){
 
                                '<td>'+data[i].subject_code+'</td>'+
                                '<td>'+data[i].subject_name+'</td>'+
+                               '<td>'+data[i].advisement_count+'</td>'+
+                               '<Td>'+data[i].suggested_section+'</td'+
                                '</tr>';
    
                     }
@@ -509,7 +363,27 @@ $(document).ready(function(){
             }
         });
 
-      
+        $('#import_csv').on('submit', function(event){
+		event.preventDefault();
+		$.ajax({
+			url:"<?php echo base_url(); ?>pages/import",
+			method:"POST",
+			data:new FormData(this),
+			contentType:false,
+			cache:false,
+			processData:false,
+			beforeSend:function(){
+				$('#import_csv_btn').html('Importing...');
+			},
+			success:function(data)
+			{
+				$('#import_csv')[0].reset();
+				$('#import_csv_btn').attr('disabled', false);
+				$('#import_csv_btn').html('Import Done');
+				load_data();
+			}
+		})
+	});
       
         }
 
@@ -519,13 +393,55 @@ $(document).ready(function(){
 
 
 });
-</script>
+
+
+
+
+   
+        $('#btn_submit').on('click', function() {
+
+            var loading_id = $('#loading').val();
+            var day = $('#day').val();
+            var time_start = $('#time_start').val();
+            //var schedule_id = $('#schedule_id').val();
+            var time_end = $('#time_end').val();
+            //var class_code = $('#class_code').val();
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('pages/insert_teacher_preferred') ?>",
+                dataType: "JSON",
+                data: {
+                    loading: loading,
+                    day: day,
+                    time_start: time_start,
+                    time_end: time_end,
+                    
+                },
+                success: function(data) {
+ 
+                    $('[name="loading"]').val("");
+                    $('[name="day"]').val("");
+                    $('[name="time_start"]').val("");
+                    //$('[name="schedule_id"]').val("");
+                    $('[name="time_end"]').val("");
+                    
+                    $('#Modal_Add').modal('hide');
+                    $('#exampleModalCenter').modal('show');
+                }
+
+                
+            });
+
+            return false;
+        });
+    </script>
+
+   
+
+    
+ 
     
 
     </body>
 
 </html>
-
-
-
-            
