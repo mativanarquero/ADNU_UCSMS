@@ -1,3 +1,7 @@
+ADNU Undergraduate Class Scheduling Management System
+
+A Web-based System for Scheduling and Managing Classes for Undergraduate of Ateneo de Naga University
+
 #ADNUCSMS
 
 REQs
